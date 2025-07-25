@@ -43,7 +43,9 @@ for d in ./*; do
 	fi
 done
 
-cp "README.md" "./../"$repositorio".wiki/Home.md"	
+# se n tiver wiki, favor comentar
+#cp "README.md" "./../"$repositorio".wiki/Home.md"	
+
 git add * && git commit -m 'atualizando' && git push
 
 # se n tiver wiki, favor comentar
