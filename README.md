@@ -7,9 +7,7 @@
 &nbsp;[setup.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./00_guia_rapido/setup.md) <br>
 [sql1.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./00_guia_rapido/sql1.pdf) <br>
 [sql2.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./00_guia_rapido/sql2.pdf) <br>
-[stored_procedure.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./00_guia_rapido/stored_procedure.pdf) <br>
 [transformacao-er-modelo-relacional.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./00_guia_rapido/transformacao-er-modelo-relacional.pdf) <br>
-[trigger.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./00_guia_rapido/trigger.pdf) <br>
 [videos.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./00_guia_rapido/videos.md) <br>
 ## [./01_revisao_normalizacao_modelagem_logica](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./01_revisao_normalizacao_modelagem_logica) <br>
 [conversao-entre-modelos-er-e-relacional.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/conversao-entre-modelos-er-e-relacional.md) <br>
