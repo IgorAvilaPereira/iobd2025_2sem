@@ -2,6 +2,8 @@
 
 * [Diagrama Entidade Relacionamento](https://www.youtube.com/watch?v=Yz40xfg-Gi8&list=PLvT8P1q6jMWfdK6v25Sjhq3qwxLIAnvtk&pp=gAQB)
 
+* [Encontro Síncrono 08/05/25 - Modelagem Conceitual, Modelagem Lógica e Implementação Física](https://www.youtube.com/watch?v=9lpbT6WpkkM)
+
 * [PostgreSQL/pgAdmin](https://www.youtube.com/watch?v=mH9bBlHVFRw&list=PLvT8P1q6jMWcT5op9r3RJpaiD4uWAh4zu&pp=gAQB)
 
 * [Modelagem Relacional](https://www.youtube.com/watch?v=Aw1hnqEzPWg&list=PLvT8P1q6jMWdCXVwsdO3UAPAn743vHccK)
