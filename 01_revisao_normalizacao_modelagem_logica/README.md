@@ -7,6 +7,8 @@
 * [transformacao-er-relacional-entidade-fraca](https://github.com/IgorAvilaPereira/pmbd2025_1sem/blob/main/4_modelagem_logica/exemplos/exemplo-transformacao-er-relacional-entidade-fraca.dia)
 -->
 
+### Vídeo Complementar de Revisão
+
 [Aula 08/05/25](https://www.youtube.com/watch?v=9lpbT6WpkkM)
 
 <!--
