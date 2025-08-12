@@ -12,6 +12,7 @@
 ## [./01_revisao_normalizacao_modelagem_logica](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./01_revisao_normalizacao_modelagem_logica) <br>
 [conversao-entre-modelos-er-e-relacional.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/conversao-entre-modelos-er-e-relacional.md) <br>
 [dicionario-de-dados.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/dicionario-de-dados.md) <br>
+[lista1.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/lista1.md) <br>
 [modelo-relacional.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/modelo-relacional.md) <br>
 [normalizacao.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/normalizacao.md) <br>
 [normalizacao_resumo.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/normalizacao_resumo.md) <br>
@@ -39,6 +40,7 @@
 ### Regras de Mapeamento - ER > Modelo Relacional
 
 [Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/pmbd2025_1sem/tree/main/./06_revisao_normalizacao_modelagem_logica)
+[trabalho2.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/trabalho2.md) <br>
 [transformacao-er-modelo-relacional.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/transformacao-er-modelo-relacional.pdf) <br>
 [imagens](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/imagens) <br>
 [regras_mapeamento](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/regras_mapeamento) <br>
