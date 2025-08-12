@@ -21,4 +21,7 @@
 
 ### Regras de Mapeamento - ER > Modelo Relacional
 
-[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/pmbd2025_1sem/tree/main/./06_revisao_normalizacao_modelagem_logica)
+
+
+
+[Baixar todo o material da aula](https://download-directory.github.io/?url=https://github.com/IgorAvilaPereira/iobd2025_2sem?tab=readme-ov-file#01_revisao_normalizacao_modelagem_logica-)
