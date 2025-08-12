@@ -1,7 +1,3 @@
-Claro! Aqui está a **lista completa com os 50 exercícios**, **sem os gabaritos**, organizados por temas:
-
----
-
 ## 📝 Lista de Exercícios SQL – Sistema de Gestão de Eventos
 
 ### 🔹 1–5. JOINs Simples e Compostos
@@ -101,5 +97,3 @@ Claro! Aqui está a **lista completa com os 50 exercícios**, **sem os gabaritos
 48. Liste os eventos que **não têm** nenhuma palestra associada.
 49. Liste os nomes dos palestrantes que **não** participam de nenhuma palestra cujo nome contenha "inovação".
 50. Liste os participantes que se inscreveram em **todos os eventos que ocorreram em 2025**.
-
-
