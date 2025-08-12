@@ -27,6 +27,8 @@
 * [transformacao-er-relacional-entidade-fraca](https://github.com/IgorAvilaPereira/pmbd2025_1sem/blob/main/4_modelagem_logica/exemplos/exemplo-transformacao-er-relacional-entidade-fraca.dia)
 -->
 
+### Vídeo Complementar de Revisão
+
 [Aula 08/05/25](https://www.youtube.com/watch?v=9lpbT6WpkkM)
 
 <!--
@@ -40,7 +42,6 @@
 ### Regras de Mapeamento - ER > Modelo Relacional
 
 [Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/pmbd2025_1sem/tree/main/./06_revisao_normalizacao_modelagem_logica)
-[trabalho2.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/trabalho2.md) <br>
 [transformacao-er-modelo-relacional.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/transformacao-er-modelo-relacional.pdf) <br>
 [imagens](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/imagens) <br>
 [regras_mapeamento](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/regras_mapeamento) <br>
