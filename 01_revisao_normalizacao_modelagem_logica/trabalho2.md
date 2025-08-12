@@ -1,63 +1,42 @@
-# Trabalho 2 
+## Trabalho 2 🎤 **Sistema de Gestão de Eventos**
 
-## Banco de Dados de um Parque de Diversões
+### 🎯 **Objetivo do Projeto**
 
-#### Descrição do Trabalho
-Desenvolver um banco de dados para gerenciar as operações de um parque de diversões. O banco de dados deve incluir informações sobre visitantes, atrações, ingressos e funcionários. O trabalho será dividido em três partes: criação do modelo relacional, script SQL para criação das tabelas e consultas básicas de SQL.
+Desenvolver um sistema simples de banco de dados relacional para gerenciar eventos, participantes, inscrições, palestrantes e suas apresentações.
 
-#### Parte 1: Modelo Relacional
+---
 
-1. **Visitantes**:
-   - `id` (chave primária)
-   - `nome`
-   - `data_nascimento`
-   - `email`
+## 📌 **Descrição das Relações**
 
-2. **Atrações**:
-   - `id` (chave primária)
-   - `nome`
-   - `tipo`
-   - `capacidade`
+### 1. **Evento**
 
-3. **Ingressos**:
-   - `id` (chave primária)
-   - `visitante_id` (chave estrangeira referenciando `Visitantes`)
-   - `atracao_id` (chave estrangeira referenciando `Atrações`)
-   - `data_visita`
+* Cada evento possui nome, data de início, data de fim e local.
+* Um evento pode ter várias **palestras**.
+* Um evento pode ter vários **participantes** (via inscrições).
 
-4. **Funcionários**:
-   - `id` (chave primária)
-   - `nome`
-   - `cargo`
-   - `salario`
-   - `atracao_id` (chave estrangeira referenciando `Atrações`)
+### 2. **Participante**
 
-#### Parte 2: Script SQL para Criação das Tabelas
+* Participante é qualquer pessoa que se inscreve em um evento.
+* Pode estar inscrito em vários eventos (relação N\:N com Evento via **Inscrição**).
 
-#### Parte 3: Consultas Básicas de SQL
+### 3. **Inscrição**
 
-1. **Inserção de Dados**:
-   - Insira pelo menos 3 registros na tabela `Visitantes`.
-   - Insira pelo menos 3 registros na tabela `Atrações`.
-   - Insira pelo menos 2 registros na tabela `Ingressos`.
-   - Insira pelo menos 2 registros na tabela `Funcionários`.
+* Tabela associativa entre **Participante** e **Evento**.
+* Relação **N\:N**, com informação adicional da data de inscrição.
 
-2. **Consultas Simples**:
-   - Selecione todos os visitantes cadastrados.
-   - Selecione todas as atrações disponíveis.
+### 4. **Palestrante**
 
-3. **Consultas com Filtros (WHERE)**:
-   - Liste todos os visitantes que visitaram uma atração específica.
-   - Liste todos os funcionários que têm um salário maior que 3000.
+* Representa o responsável por ministrar uma ou mais palestras.
+* Pode participar de várias palestras (relação N\:N com Palestra via tabela **Palestra\_Palestrante**).
 
-4. **Consultas com Ordenação (ORDER BY)**:
-   - Liste todos os visitantes ordenados pelo nome.
-   - Liste todas as atrações ordenadas pela capacidade em ordem decrescente.
+### 5. **Palestra**
 
-5. **Consultas com Funções Básicas**:
-   - Calcule a média dos salários dos funcionários.
-   - Encontre a data mais recente de visita registrada.
+* Cada palestra está vinculada a **um único evento**.
+* Pode ter **um ou mais palestrantes** (relação N\:N).
 
-6. **Consultas com Manipulação de Data e Hora**:
-   - Liste todos os visitantes que nasceram antes do ano 2000.
-   - Calcule a idade de cada visitante com base na data de nascimento.
+### 6. **Palestra\_Palestrante**
+
+* Tabela associativa entre **Palestra** e **Palestrante**.
+* Permite que uma palestra tenha múltiplos palestrantes e que um palestrante participe de várias palestras.
+
+---
