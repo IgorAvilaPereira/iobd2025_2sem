@@ -42,6 +42,8 @@
 ### Regras de Mapeamento - ER > Modelo Relacional
 
 [Baixar todo o material da aula](https://download-directory.github.io/?url=https://github.com/IgorAvilaPereira/iobd2025_2sem?tab=readme-ov-file#01_revisao_normalizacao_modelagem_logica-) <br><br>
+[sistema_eventos.dia](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/sistema_eventos.dia) <br>
+[sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/sistema_eventos.sql) <br>
 [transformacao-er-modelo-relacional.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/transformacao-er-modelo-relacional.pdf) <br>
 [imagens](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/imagens) <br>
 [regras_mapeamento](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/regras_mapeamento) <br>
