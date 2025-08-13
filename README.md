@@ -12,8 +12,10 @@
 ## [./01_revisao_normalizacao_modelagem_logica](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./01_revisao_normalizacao_modelagem_logica) <br>
 [conversao-entre-modelos-er-e-relacional.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/conversao-entre-modelos-er-e-relacional.md) <br>
 [dicionario-de-dados.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/dicionario-de-dados.md) <br>
+[etapas.png](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/etapas.png) <br>
 [iobd2025_2sem.txt](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/iobd2025_2sem.txt) <br>
 [lista1.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/lista1.md) <br>
+[mapamental.png](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/mapamental.png) <br>
 [modelo-relacional.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/modelo-relacional.md) <br>
 [normalizacao.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/normalizacao.md) <br>
 [normalizacao_resumo.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/normalizacao_resumo.md) <br>
