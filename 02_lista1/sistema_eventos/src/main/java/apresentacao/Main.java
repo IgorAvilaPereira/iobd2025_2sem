@@ -20,21 +20,35 @@ public class Main {
             Connection conexao = DriverManager.getConnection(url, username, password);
 
             // inserindo um novo
-            String nome = JOptionPane.showInputDialog("Digite o nome do novo participante:");
-            String sqlInsert = "INSERT INTO participante (nome) VALUES ('"+nome+"');";
-            conexao.prepareStatement(sqlInsert).execute();
+            // String nome = JOptionPane.showInputDialog("Digite o nome do novo participante:");
+            // String sqlInsert = "INSERT INTO participante (nome) VALUES ('"+nome+"');";
+            // conexao.prepareStatement(sqlInsert).execute();
 
             // listando todos os participantes
             String sql = "SELECT participante.nome FROM participante ORDER BY id";
             ResultSet rs = conexao.prepareStatement(sql).executeQuery();
             String retorno = "";
             while(rs.next()){
-                // System.out.println(rs.getString("nome"));
                 retorno += rs.getString("nome")+"\n";
             }
-            rs.close();
-            conexao.close();
             JOptionPane.showMessageDialog(null, retorno);
+            rs.close();
+
+
+            String sqlView = "select * from eventos_com_inscricoes_maior_que_a_media;";
+            ResultSet rsView = conexao.prepareStatement(sqlView).executeQuery();
+            retorno = "";
+            while(rsView.next()){
+                retorno += "------------------\n";
+                retorno += String.valueOf(rsView.getInt("id"))+"\n";
+                retorno += rsView.getString("nome")+"\n";
+                retorno += String.valueOf(rsView.getInt("qtde"))+"\n";
+                retorno += "------------------\n";
+
+            }
+            JOptionPane.showMessageDialog(null, retorno);
+            rsView.close();
+            conexao.close();
         } catch (Exception e) {
             System.out.println("Deu xabum!");
         }

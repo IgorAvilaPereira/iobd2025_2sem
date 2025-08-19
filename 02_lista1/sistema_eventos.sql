@@ -81,6 +81,11 @@ INSERT INTO palestrante (nome, cpf) VALUES
 INSERT INTO palestrante (nome, cpf) VALUES 
 ('MÁRCIO JOSUÉ RAMOS TORRES', '01734555555');
 
+
+
+INSERT INTO palestrante (nome, cpf) VALUES 
+('RAQUEL BARBOSA', '01734555553');
+
 CREATE TABLE palestra_palestrante (
     palestra_id integer references palestra (id),
     palestrante_id integer references palestrante (id),
@@ -134,14 +139,30 @@ INSERT INTO palestra_palestrante (palestra_id, palestrante_id) VALUES
 -- SELECT evento.id, evento.nome, count(*) FROM evento JOIN inscricao on evento.id = inscricao.evento_id group by evento.id  having count(*) > (SELECT AVG(cnt) FROM (SELECT count(*) as cnt FROM inscricao group by evento_id) sub);
   
 -- usando with
---WITH tabela_media AS (
---    SELECT AVG(cnt) as media FROM (SELECT count(*) as cnt FROM inscricao group by evento_id) sub
---), tabela_eventos AS (
---    SELECT evento.id, evento.nome, count(*) as qtde FROM evento         
---    JOIN inscricao on evento.id = inscricao.evento_id group by evento.id
---) 
---SELECT * FROM tabela_eventos WHERE qtde > (SELECT media FROM tabela_media);
+/*
+WITH tabela_media AS (
+    SELECT AVG(cnt) as media FROM (SELECT count(*) as cnt FROM inscricao group by evento_id) sub
+), tabela_eventos AS (
+    SELECT evento.id, evento.nome, count(*) as qtde FROM evento         
+    JOIN inscricao on evento.id = inscricao.evento_id group by evento.id
+) 
+SELECT * FROM tabela_eventos WHERE qtde > (SELECT media FROM tabela_media);
+*/
 
+-- SELECT * FROM participante WHERE id NOT IN (SELECT participante_id from inscricao);
+
+
+/*
+CREATE VIEW eventos_com_inscricoes_maior_que_a_media AS (WITH tabela_media AS (                                                                                       SELECT AVG(cnt) as media FROM (SELECT count(*) as cnt FROM inscricao group by evento_id) sub                
+), tabela_eventos AS (                                                  
+    SELECT evento.id, evento.nome, count(*) as qtde FROM evento         
+    JOIN inscricao on evento.id = inscricao.evento_id group by evento.id
+)                                                                          
+SELECT * FROM tabela_eventos WHERE qtde > (SELECT media FROM tabela_media));
+
+
+
+*/
 
 
 
