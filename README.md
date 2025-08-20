@@ -52,6 +52,8 @@
 [regras_mapeamento](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/regras_mapeamento) <br>
 [slides_normalizacao](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/slides_normalizacao) <br>
 ## [./02_lista1](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./02_lista1) <br>
+https://www.youtube.com/watch?v=0y_q_dKNT-0
+
 <br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/02_lista1) <br><br>
 &nbsp;
 [sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./02_lista1/sistema_eventos.sql) <br>
