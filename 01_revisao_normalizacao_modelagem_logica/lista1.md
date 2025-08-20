@@ -72,6 +72,8 @@ Desenvolver um sistema simples de banco de dados relacional para gerenciar event
 14. Liste os nomes dos palestrantes que não estão vinculados a nenhuma palestra.
 15. Liste os participantes que não se inscreveram em nenhum evento.
 
+[19/07](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/02_lista1/sistema_eventos.sql)
+
 ---
 
 ### 🔹 16–20. GROUP BY e HAVING
