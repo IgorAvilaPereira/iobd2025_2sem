@@ -1,4 +1,5 @@
-[SQL: Join's, WITH, Subselect, Group By, Having, JDBC, AVG, COUNT, ORDER BY e VIEWS](https://www.youtube.com/watch?v=0y_q_dKNT-0)
+
+[SQL: Join's, WITH, Subselect, Group By, STRING_AGG, Having, JDBC, AVG, COUNT, ORDER BY e VIEWS](https://www.youtube.com/watch?v=0y_q_dKNT-0)
 
 
 
