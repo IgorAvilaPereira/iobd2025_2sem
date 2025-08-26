@@ -53,7 +53,7 @@
 [slides_normalizacao](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/slides_normalizacao) <br>
 ## [./02_lista1](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./02_lista1) <br>
 
-:video [SQL: Join's, WITH, Subselect, Group By, STRING_AGG, Having, JDBC, AVG, COUNT, ORDER BY e VIEWS](https://www.youtube.com/watch?v=0y_q_dKNT-0)
+:movie_camera: [SQL: Join's, WITH, Subselect, Group By, STRING_AGG, Having, JDBC, AVG, COUNT, ORDER BY e VIEWS](https://www.youtube.com/watch?v=0y_q_dKNT-0)
 
 <br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/02_lista1) <br><br>
 &nbsp;
@@ -69,7 +69,7 @@
 
 * Blob's, UUID (futuro)
 
-** JDBC + Java WEB:**
+**JDBC + Java WEB:**
 
 * [JavalinMustacheWithStaticFolder](https://github.com/IgorAvilaPereira/JavalinMustacheWithStaticFolder)
 
