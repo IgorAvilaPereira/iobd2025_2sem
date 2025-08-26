@@ -6,7 +6,7 @@
 
 * Blob's, UUID (futuro)
 
-** JDBC + Java WEB:**
+**JDBC + Java WEB:**
 
 * [JavalinMustacheWithStaticFolder](https://github.com/IgorAvilaPereira/JavalinMustacheWithStaticFolder)
 
