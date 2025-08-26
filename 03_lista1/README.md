@@ -1,7 +1,12 @@
+* Continuação da Lista 1 + JDBC
+
+**Tópicos que devem ser abordados na aula:**
 
 * COALESCE, DISTINCT, CASE WHEN, TYPE, SCHEMAS, CAST, LIMIT, OFFSET e etc.
 
 * Blob's, UUID (futuro)
+
+** JDBC + Java WEB:**
 
 * [JavalinMustacheWithStaticFolder](https://github.com/IgorAvilaPereira/JavalinMustacheWithStaticFolder)
 
