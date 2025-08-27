@@ -61,6 +61,7 @@
 [GUIBuilder](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./02_lista1/GUIBuilder) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./02_lista1/sistema_eventos) <br>
 ## [./03_lista1](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./03_lista1) <br>
+[dao_jdbc.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./03_lista1/dao_jdbc.pdf) <br>
 * Continuação da Lista 1 + JDBC
 
 **Tópicos que devem ser abordados na aula:**
