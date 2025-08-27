@@ -39,7 +39,6 @@ public class MainWeb {
 
             // index - tela inicial: listamos os participantes
             app.get("/", ctx -> {
-
                 Connection conexao = DriverManager.getConnection(url, username, password);
                 String sql = "SELECT id, nome FROM participante ORDER BY id";
                 ResultSet rs = conexao.prepareStatement(sql).executeQuery();
