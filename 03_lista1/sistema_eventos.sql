@@ -159,12 +159,20 @@ CREATE VIEW eventos_com_inscricoes_maior_que_a_media AS (WITH tabela_media AS ( 
     JOIN inscricao on evento.id = inscricao.evento_id group by evento.id
 )                                                                          
 SELECT * FROM tabela_eventos WHERE qtde > (SELECT media FROM tabela_media));
-
-
-
 */
 
+-- SELECT evento_id, evento.nome, count(inscricao.id) as qtde_inscricoes FROM inscricao INNER JOIN evento ON (evento.id = inscricao.evento_id) group by inscricao.evento_id, evento.nome order by inscricao.evento_id;
 
+/*
+SELECT palestrante.id, palestrante.nome, count(*) FROM
+palestrante INNER JOIN palestra_palestrante ON (palestrante.id = palestra_palestrante.palestrante_id) group by palestrante.id, palestrante.nome having count(*) >= 3;
+*/
+
+-- SELECT evento.id, evento.nome, count(inscricao.id) FROM evento INNER JOIN inscricao ON (evento.id = inscricao.evento_id) GROUP BY evento.id, evento.nome HAVING count(inscricao.id) >= 2;
+
+-- SELECT evento.id, avg(palestra.id)::numeric(10,1) FROM evento INNER JOIN palestra ON (evento.id = palestra.evento_id) GROUP BY evento.id;
+
+-- select id, nome, data_fim, data_inicio from evento where data_fim - data_inicio >= 3
 
 
 

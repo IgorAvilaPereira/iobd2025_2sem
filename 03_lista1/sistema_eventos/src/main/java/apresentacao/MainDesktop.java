@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
 
-public class Main {
+public class MainDesktop {
     public static void main(String[] args) {
         String host = "localhost";
         String username = "postgres";
@@ -14,8 +14,7 @@ public class Main {
         String password = "postgres";
         String dbname = "sistema_eventos";
         String url = "jdbc:postgresql://"+host+":"+port+"/"+dbname;
-        
-       
+          
         try {
             Connection conexao = DriverManager.getConnection(url, username, password);
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/script.js"></script>
+</head>
+
+<body onload="hello()">
+    {{mensagem_boas_vindas}}
+    <table border='1'>
+        <tr>
+            <td>Excluir</td>
+            <td>alterar</td>
+            <td>nome</td>
+        </tr>
+        {{#vetParticipante}}
+        <tr>
+
+            <td> <a href="/excluir_participante/{{id}}">Excluir</a> </td>
+            <td> <a href="/tela_alterar/{{id}}">Alterar</a> </td>
+
+            <td> {{nome}}</td>
+        </tr>
+
+        {{/vetParticipante}}
+    </table>
+    <a href="/tela_adicionar">adicionar</a>
+
+</body>
+
+</html>
