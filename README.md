@@ -78,3 +78,6 @@
 &nbsp;
 [sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./03_lista1/sistema_eventos.sql) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./03_lista1/sistema_eventos) <br>
+## [./04_lista_bloco_26_30](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./04_lista_bloco_26_30) <br>
+<br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/04_lista_bloco_26_30) <br><br>
+&nbsp;
