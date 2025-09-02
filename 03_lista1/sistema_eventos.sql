@@ -174,7 +174,19 @@ palestrante INNER JOIN palestra_palestrante ON (palestrante.id = palestra_palest
 
 -- select id, nome, data_fim, data_inicio from evento where data_fim - data_inicio >= 3
 
-
+-- 26
+/*
+SELECT
+    evento.nome,
+    data_inicio,
+    data_fim,
+    CASE 
+        WHEN data_fim < CURRENT_DATE THEN 'Encerrado' 
+        WHEN current_date BETWEEN data_inicio AND data_fim THEN 'em andamento' 
+    ELSE 'futuro' 
+    END AS status 
+FROM evento;
+*/
 
 
 
