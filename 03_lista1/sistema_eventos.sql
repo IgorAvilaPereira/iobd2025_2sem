@@ -188,6 +188,25 @@ SELECT
 FROM evento;
 */
 
+/*
+SELECT 
+    palestra.id, palestra.titulo, 
+    STRING_AGG(COALESCE(palestrante.nome, 'Sem palestrante'),',') as palestrantes 
+FROM palestra LEFT JOIN palestra_palestrante ON
+(palestra.id = palestra_palestrante.palestra_id) 
+LEFT JOIN palestrante ON (palestrante.id = palestra_palestrante.palestrante_id) 
+GROUP BY 
+        palestra.id, 
+        palestra.titulo order by palestra.id;
+
+
+*/
+
+/*
+SELECT palestra.id, palestra.titulo, case when count(palestra_palestrante.palestrante_id) > 0 then 'tem' else 'n tem' end FROM palestra LEFT JOIN palestra_palestrante ON (palestra.id = palestra_palestrante.palestra_id) group by palestra.id, palestra.titulo;
+ id |
+*/
+
 
 
 
