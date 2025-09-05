@@ -104,6 +104,9 @@ Desenvolver um sistema simples de banco de dados relacional para gerenciar event
 29. Liste os nomes das pessoas que são **tanto palestrantes quanto participantes**.
 30. Liste todos os nomes de pessoas envolvidas no sistema, sejam palestrantes ou participantes (sem duplicar nomes).
 
+
+[02/09](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/03_lista1/sistema_eventos.sql)
+
 ---
 
 ### 🔹 31–35. ORDER BY, LIMIT, OFFSET
