@@ -14,6 +14,20 @@
 
 * [Playlist com vídeos sobre JDBC, DAO e ORM](https://youtube.com/playlist?list=PLvT8P1q6jMWf_Epq_VhCgupInovZGdSZ-&si=YWavfUkW4eWIn3U6)
 
+* https://youtube.com/playlist?list=PLvT8P1q6jMWf_Epq_VhCgupInovZGdSZ-&si=YWavfUkW4eWIn3U6
+  
+* https://youtu.be/0y_q_dKNT-0
+  
+* https://youtu.be/AnbrV5e2WJ0?si=gERP9hfecRXcgu5S&t=2433
+
+Instalação:
+
+* https://youtu.be/L_2l8XTCPAE?si=sxtIExdIXJV5zd7S
+  
+* https://youtu.be/wh7yKZVx294?si=Pxa1zF7pX036oG1A
+  
+* https://youtu.be/UbX-2Xud1JA?si=fTeOFyYT7g0zO_sZ
+
 ***
 
 * [**PostgreSQL - Como Programar - DesCOMPlica, Oliba!**](https://www.youtube.com/playlist?list=PLHCyLhqWSaHDHOCJycIf4FHSU6-IMCxuN)
