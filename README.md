@@ -87,3 +87,4 @@
 &nbsp;
 [sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./05_lista_bloco_31_35/sistema_eventos.sql) <br>
 [trabalho1.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./05_lista_bloco_31_35/trabalho1.md) <br>
+[aula090925](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./05_lista_bloco_31_35/aula090925) <br>
