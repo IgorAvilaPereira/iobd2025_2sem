@@ -81,7 +81,7 @@
 ## [./04_lista_bloco_26_30](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./04_lista_bloco_26_30) <br>
 <br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/04_lista_bloco_26_30) <br><br>
 &nbsp;
-## [./06_lista_bloco_31_35](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./06_lista_bloco_31_35) <br>
+## [./05_lista_bloco_31_35](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./05_lista_bloco_31_35) <br>
 <br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/06_lista_bloco_31_35) <br><br>
 &nbsp;
-[trabalho1.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./06_lista_bloco_31_35/trabalho1.md) <br>
+[trabalho1.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./05_lista_bloco_31_35/trabalho1.md) <br>
