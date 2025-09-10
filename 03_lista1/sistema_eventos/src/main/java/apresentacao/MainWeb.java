@@ -24,12 +24,13 @@ public class MainWeb {
         String host = "localhost";
         String dbname = "sistema_eventos";
         String port = "5432";
-        
+
         // String username = "neondb_owner";
         String username = "postgres";
         // String password = "npg_dBzcbu3Tj8XD";
         String password = "postgres";
-        // String url = "jdbc:postgresql://ep-cool-haze-ac62qutg-pooler.sa-east-1.aws.neon.tech/neondb?user=neondb_owner&password=npg_dBzcbu3Tj8XD&sslmode=require&channelBinding=require";
+        // String url =
+        // "jdbc:postgresql://ep-cool-haze-ac62qutg-pooler.sa-east-1.aws.neon.tech/neondb?user=neondb_owner&password=npg_dBzcbu3Tj8XD&sslmode=require&channelBinding=require";
         String url = "jdbc:postgresql://" + host + ":" + port + "/" + dbname;
 
         try {
@@ -38,17 +39,17 @@ public class MainWeb {
                 config.staticFiles.add("/static", Location.CLASSPATH);
             }).start(7070);
 
-             app.get("/eventos", ctx -> {
+            app.get("/eventos", ctx -> {
                 Connection conexao = DriverManager.getConnection(url, username, password);
                 String sql = "select\n" + //
-                                        "    evento.nome,\n" + //
-                                        "    data_inicio,\n" + //
-                                        "    data_fim,\n" + //
-                                        "    case \n" + //
-                                        "        when data_fim < CURRENT_DATE then 'Encerrado' \n" + //
-                                        "        when current_date between data_inicio and data_fim then 'em andamento' \n" + //
-                                        "    else 'futuro' \n" + //
-                                        "    end as status from evento;";
+                        "    evento.nome,\n" + //
+                        "    data_inicio,\n" + //
+                        "    data_fim,\n" + //
+                        "    case \n" + //
+                        "        when data_fim < CURRENT_DATE then 'Encerrado' \n" + //
+                        "        when current_date between data_inicio and data_fim then 'em andamento' \n" + //
+                        "    else 'futuro' \n" + //
+                        "    end as status from evento;";
                 ResultSet rs = conexao.prepareStatement(sql).executeQuery();
                 Map<String, Object> model = new HashMap<>();
                 List<Evento> vetEvento = new ArrayList<>();
@@ -68,9 +69,22 @@ public class MainWeb {
 
             // index - tela inicial: listamos os participantes
             app.get("/", ctx -> {
+                ctx.redirect("/0");
+            });
+
+            app.get("/{pagina}", ctx -> {
+                int pagina = 0;
+                pagina = Integer.parseInt(ctx.pathParam("pagina"));
                 Connection conexao = DriverManager.getConnection(url, username, password);
-                String sql = "SELECT id, nome FROM participante ORDER BY id";
-                ResultSet rs = conexao.prepareStatement(sql).executeQuery();
+                String sqlNro = "SELECT ceil(COUNT(*)::real/10::real)::integer as nro FROM participante;";
+                ResultSet rs = conexao.prepareStatement(sqlNro).executeQuery();
+                int qtde = 1;
+                if (rs.next()) {
+                    qtde = rs.getInt("nro");
+                }
+
+                String sql = "SELECT id, nome FROM participante ORDER BY id LIMIT 10 OFFSET " + (pagina * 10);
+                rs = conexao.prepareStatement(sql).executeQuery();
                 Map<String, Object> model = new HashMap<>();
                 List<Participante> vetParticipante = new ArrayList<>();
                 while (rs.next()) {
@@ -78,6 +92,19 @@ public class MainWeb {
                 }
                 model.put("vetParticipante", vetParticipante);
                 model.put("mensagem_boas_vindas", "E ai meu!, blzura?");
+
+                if (qtde > 1 && pagina == 0) {
+                    model.put("proximo", 1);
+                } else {
+                    if (qtde > 1 && pagina >= 1 && pagina + 1 != qtde) {
+                        model.put("proximo", pagina + 1);
+                        model.put("anterior", pagina - 1);
+                    } else {
+                        if (qtde > 1 && pagina >= 1) {
+                            model.put("anterior", pagina - 1);
+                        }
+                    }
+                }
                 rs.close();
                 conexao.close();
                 ctx.render("/templates/index.html", model);
@@ -94,12 +121,13 @@ public class MainWeb {
                 ctx.redirect("/");
             });
 
-            // tela_adicionar: apenas exibimos o html 
+            // tela_adicionar: apenas exibimos o html
             app.get("/tela_adicionar", ctx -> {
                 ctx.render("/templates/tela_adicionar.html");
             });
 
-            // adicionar: adicionando um novo participante e redirecionando novamente para o index (listagem)
+            // adicionar: adicionando um novo participante e redirecionando novamente para o
+            // index (listagem)
             app.post("/adicionar", ctx -> {
                 Connection conexao = DriverManager.getConnection(url, username, password);
                 String nome = ctx.formParam("nome");
@@ -109,7 +137,8 @@ public class MainWeb {
                 ctx.redirect("/");
             });
 
-            // tela_alterar: recebemos o id do participante que desejamos alterar, e encaminhamos para o formulario ja com os dados pre-preenchidos
+            // tela_alterar: recebemos o id do participante que desejamos alterar, e
+            // encaminhamos para o formulario ja com os dados pre-preenchidos
             app.get("/tela_alterar/{id}", ctx -> {
                 Connection conexao = DriverManager.getConnection(url, username, password);
                 Map<String, Object> model = new HashMap<>();
@@ -125,7 +154,8 @@ public class MainWeb {
                 ctx.render("/templates/tela_alterar.html", model);
             });
 
-            // alterar: realiza a alteracao (recebendo id por hidden e um novo valor de nome)
+            // alterar: realiza a alteracao (recebendo id por hidden e um novo valor de
+            // nome)
             app.post("/alterar", ctx -> {
                 Connection conexao = DriverManager.getConnection(url, username, password);
                 String nome = ctx.formParam("nome");

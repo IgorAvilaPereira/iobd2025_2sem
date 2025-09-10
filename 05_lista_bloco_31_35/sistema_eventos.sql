@@ -207,6 +207,24 @@ SELECT palestra.id, palestra.titulo, case when count(palestra_palestrante.palest
  id 
 */
 
+-- 31
+SELECT id, data_inicio FROM evento WHERE data_inicio <= CURRENT_DATE ORDER BY data_inicio DESC LIMIT 5;
 
+-- 31
+SELECT id, data_inicio FROM evento WHERE data_inicio <= CURRENT_DATE UNION SELECT id, data_inicio FROM evento WHERE data_inicio <= CURRENT_DATE ORDER BY data_inicio ASC LIMIT 5;
+
+-- 32
+ SELECT participante.nome, cast(data_hora as date) FROM inscricao join participante on inscricao.participante_id = participante.id ORDER BY data_hora ASC LIMIT 10;
+ 
+  INSERT INTO palestra_palestrante (palestra_id, palestrante_id) VALUES (3, 1);
+
+INSERT INTO palestra_palestrante (palestra_id, palestrante_id) VALUES (3, 2);
+
+-- 33
+SELECT evento.id, evento.nome FROM evento JOIN palestra ON (evento.id = palestra.evento_id) join palestra_palestrante on (palestra.id = palestra_palestrante.palestra_id) group by evento.id, evento.nome having count(*) = (select count(*) FROM evento JOIN palestra on evento.id = palestra.evento_id join palestra_palestrante on (palestra.id = palestra_palestrante.palestra_id) group by evento.id ORDER BY count(*) DESC LIMIT 1) ORDER BY evento.id;
+
+-- 34 mesma ideia do 33
+SELECT * FROM participante LIMIT 10;
+SELECT * FROM participante LIMIT 10 OFFSET 10;
 
 
