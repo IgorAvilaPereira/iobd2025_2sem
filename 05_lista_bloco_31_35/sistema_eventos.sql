@@ -67,6 +67,31 @@ INSERT INTO palestra (titulo, duracao, evento_id) VALUES
 INSERT INTO palestra (titulo, duracao, evento_id) VALUES
 ('WEB', 120, 2);
 
+INSERT INTO palestra (titulo, duracao, evento_id) VALUES
+('dados', 120, 2);
+
+INSERT INTO palestra (titulo, duracao, evento_id) VALUES
+('os dados', 120, 2);
+
+INSERT INTO palestra (titulo, duracao, evento_id) VALUES
+('os dados', 120, 3);
+
+INSERT INTO palestra (titulo, duracao, evento_id) VALUES
+('os dados', 120, 3);
+INSERT INTO palestra (titulo, duracao, evento_id) VALUES
+('os dados', 120, 3);
+INSERT INTO palestra (titulo, duracao, evento_id) VALUES
+('os dados', 120, 3);
+INSERT INTO palestra (titulo, duracao, evento_id) VALUES
+('os dados', 120, 3);
+INSERT INTO palestra (titulo, duracao, evento_id) VALUES
+('os dados', 120, 3);
+
+
+
+INSERT INTO palestra (titulo, duracao, evento_id) VALUES
+('os dados faltantes', 120, 2);
+
 CREATE TABLE palestrante (
     id serial primary key,
     nome character varying(200) not null,
@@ -80,8 +105,6 @@ INSERT INTO palestrante (nome, cpf) VALUES
 
 INSERT INTO palestrante (nome, cpf) VALUES 
 ('MÁRCIO JOSUÉ RAMOS TORRES', '01734555555');
-
-
 
 INSERT INTO palestrante (nome, cpf) VALUES 
 ('RAQUEL BARBOSA', '01734555553');
@@ -226,5 +249,62 @@ SELECT evento.id, evento.nome FROM evento JOIN palestra ON (evento.id = palestra
 -- 34 mesma ideia do 33
 SELECT * FROM participante LIMIT 10;
 SELECT * FROM participante LIMIT 10 OFFSET 10;
+
+-- 36
+ SELECT DISTINCT evento.id, evento.nome, count(palestra.id) as qtde FROM evento LEFT JOIN palestra ON (evento.id = palestra.evento_id) GROUP BY evento.id, evento.nome ORDER BY evento.id;
+ 
+-- 37
+SELECT DISTINCT palestra.id, palestra.titulo FROM palestra LEFT JOIN palestra_palestrante ON palestra.id = palestra_palestrante.palestra_id ORDER BY id;
+
+-- 38
+SELECT palestrante.id, palestrante.nome, palestra.titulo FROM palestra RIGHT JOIN palestra_palestrante on palestra.id = palestra_palestrante.palestra_id RIGHT JOIN palestrante on palestrante.id = palestra_palestrante.palestrante_id;
+
+-- 39
+SELECT * FROM participante where nome ILIKE 'b%';
+
+-- 40
+select * from palestra where titulo ilike '%dados%'; 
+
+-- 41
+select p.id, p.nome, count(p.id) FROM palestrante p JOIN palestra_palestrante pa ON (p.id = pa.palestrante_id) GROUP BY p.id, p.nome ORDER BY count(p.id) DESC; 
+
+-- 42 (sem empate)
+SELECT evento.id, evento.nome, count(palestra.evento_id) FROM evento LEFT JOIN palestra ON evento.id = palestra.evento_id group by evento.id, evento.nome ORDER BY count(palestra.evento_id) DESC, evento.id ASC LIMIT 1;
+
+-- 42 (com empate)
+SELECT evento.id, evento.nome, count(palestra.evento_id) FROM evento LEFT JOIN palestra ON evento.id = palestra.evento_id group by evento.id, evento.nome having count(palestra.evento_id) = (SELECT count(palestra.evento_id) FROM evento LEFT JOIN palestra ON evento.id = palestra.evento_id group by evento.id, evento.nome ORDER BY count(palestra.evento_id) DESC LIMIT 1) ORDER BY evento.id;
+
+
+-- 43
+SELECT COUNT(*) FROM inscricao WHERE extract(month from data_hora::date)= extract(month from current_date) and extract(year from data_hora::date) = extract(year from current_date);
+
+-- 44
+select count(*) from palestra;
+
+-- 45
+select evento.id, evento.nome, data_fim, data_inicio, data_fim - data_inicio as duracao from evento ORDER BY data_fim - data_inicio ASC LIMIT 1;
+
+-- 46
+select * from participante where id not in (select participante_id from inscricao); 
+
+SELECT * FROM participante LEFT JOIN inscricao ON participante.id = inscricao.participante_id WHERE inscricao.participante_id IS NULL;
+
+select * from participante where id in (select participante.id from participante except select participante_id from inscricao);
+
+-- 47
+SELECT * FROM palestra WHERE id not in (select palestra_id from palestra_palestrante);
+
+-- 48
+-- acho que ja fiz.
+
+-- 49
+select * from palestrante where id not in (select palestrante_id from palestra_palestrante join palestra on (palestra.id = palestra_palestrante.palestra_id) where palestra.titulo ilike '%inovacao%');
+
+-- 50
+select * from participante where id in (SELECT participante_id FROM inscricao join evento on (evento.id = inscricao.evento_id) where extract(year from evento.data_inicio) = extract(year from current_date));
+
+
+
+
 
 
