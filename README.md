@@ -52,6 +52,7 @@
 [regras_mapeamento](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/regras_mapeamento) <br>
 [slides_normalizacao](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/slides_normalizacao) <br>
 ## [./02_lista1](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./02_lista1) <br>
+[Lista 1](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/01_revisao_normalizacao_modelagem_logica/lista1.md)
 
 :movie_camera: [SQL: Join's, WITH, Subselect, Group By, STRING_AGG, Having, JDBC, AVG, COUNT, ORDER BY e VIEWS](https://www.youtube.com/watch?v=0y_q_dKNT-0)
 
@@ -62,7 +63,8 @@
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./02_lista1/sistema_eventos) <br>
 ## [./03_lista1](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./03_lista1) <br>
 [dao_jdbc.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./03_lista1/dao_jdbc.pdf) <br>
-* Continuação da Lista 1 + JDBC
+[Lista 1](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/01_revisao_normalizacao_modelagem_logica/lista1.md)
+
 
 **Tópicos que devem ser abordados na aula:**
 
@@ -79,15 +81,24 @@
 [sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./03_lista1/sistema_eventos.sql) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./03_lista1/sistema_eventos) <br>
 ## [./04_lista_bloco_26_30](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./04_lista_bloco_26_30) <br>
+[Lista 1](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/01_revisao_normalizacao_modelagem_logica/lista1.md)
+
+
 <br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/04_lista_bloco_26_30) <br><br>
 &nbsp;
 [sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./04_lista_bloco_26_30/sistema_eventos.sql) <br>
 ## [./05_lista_bloco_31_35](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./05_lista_bloco_31_35) <br>
+[Lista 1](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/01_revisao_normalizacao_modelagem_logica/lista1.md)
+
+
 <br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/06_lista_bloco_31_35) <br><br>
 &nbsp;
 [sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./05_lista_bloco_31_35/sistema_eventos.sql) <br>
 [trabalho1.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./05_lista_bloco_31_35/trabalho1.md) <br>
 [aula090925](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./05_lista_bloco_31_35/aula090925) <br>
 ## [./06_lista_bloco_36_40](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./06_lista_bloco_36_40) <br>
+[Lista 1](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/01_revisao_normalizacao_modelagem_logica/lista1.md)
+
 <br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/06_lista_bloco_36_40) <br><br>
 &nbsp;
+[sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./06_lista_bloco_36_40/sistema_eventos) <br>
