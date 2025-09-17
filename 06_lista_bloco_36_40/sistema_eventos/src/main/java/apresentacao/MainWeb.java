@@ -14,6 +14,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 /**
  *
  * @author iapereira
@@ -33,11 +35,62 @@ public class MainWeb {
         // "jdbc:postgresql://ep-cool-haze-ac62qutg-pooler.sa-east-1.aws.neon.tech/neondb?user=neondb_owner&password=npg_dBzcbu3Tj8XD&sslmode=require&channelBinding=require";
         String url = "jdbc:postgresql://" + host + ":" + port + "/" + dbname;
 
-        try {
+        // try {
             var app = Javalin.create(config -> {
                 config.fileRenderer(new JavalinMustache());
                 config.staticFiles.add("/static", Location.CLASSPATH);
             }).start(7070);
+            
+            // com js           
+            app.post("/buscar_participante", ctx -> {
+                
+                ObjectMapper objectMapper = new ObjectMapper();
+                Map<String, String> map = objectMapper.readValue(ctx.body(), Map.class);
+
+                String nome = map.get("nome");
+                if (!nome.isEmpty() && !nome.isBlank()) {
+                    String sql = "SELECT * FROM participante where nome ILIKE '"+nome+"%'";
+                    Connection conexao = DriverManager.getConnection(url, username, password);
+                    ResultSet rs = conexao.prepareStatement(sql).executeQuery();
+                    List<Participante> vetParticipante = new ArrayList<>();
+                    while (rs.next()) {
+                        vetParticipante.add(new Participante(rs.getInt("id"), rs.getString("nome")));
+                    }
+                    rs.close();
+                    conexao.close();
+                    ctx.json(vetParticipante);
+                } else {
+                     ctx.json(new ArrayList<>());
+                }
+            });
+
+            // com html todo renderizado novamente
+            // app.post("/buscar_participante", ctx -> {
+            //     String nome = ctx.formParam("nome");
+            //     String sql = "SELECT * FROM participante where nome ILIKE '"+nome+"%'";
+            //     Connection conexao = DriverManager.getConnection(url, username, password);
+            //     ResultSet rs = conexao.prepareStatement(sql).executeQuery();
+            //     Map<String, Object> model = new HashMap<>();
+            //     List<Participante> vetParticipante = new ArrayList<>();
+            //     while (rs.next()) {
+            //         vetParticipante.add(new Participante(rs.getInt("id"), rs.getString("nome")));
+            //     }
+            //     rs.close();
+            //     conexao.close();
+            //     model.put("vetParticipante", vetParticipante);
+            //     ctx.render("/templates/tela_buscar_participante.html", model);
+            // });
+
+            app.get("/tela_buscar_participante", ctx -> {
+                // System.out.println("deu ruim?!");
+                ctx.render("/templates/tela_buscar_participante.html");
+            });
+
+            // tela_adicionar: apenas exibimos o html
+            app.get("/tela_adicionar", ctx -> {
+                // System.out.println("deu ruim?!");
+                ctx.render("/templates/tela_adicionar.html");
+            });
 
             app.get("/eventos", ctx -> {
                 Connection conexao = DriverManager.getConnection(url, username, password);
@@ -125,10 +178,6 @@ public class MainWeb {
                 ctx.redirect("/");
             });
 
-            // tela_adicionar: apenas exibimos o html
-            app.get("/tela_adicionar", ctx -> {
-                ctx.render("/templates/tela_adicionar.html");
-            });
 
             // adicionar: adicionando um novo participante e redirecionando novamente para o
             // index (listagem)
@@ -170,9 +219,9 @@ public class MainWeb {
                 ctx.redirect("/");
             });
 
-        } catch (Exception e) {
-            // caso alguma coisa dê xabum! - principalmente no servidor ou no bd
-            System.out.println("Deu xabum!");
-        }
+        // } catch (Exception e) {
+        //     // caso alguma coisa dê xabum! - principalmente no servidor ou no bd
+        //     System.out.println("Deu xabum!");
+        // }
     }
 }
