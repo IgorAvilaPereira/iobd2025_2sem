@@ -146,3 +146,112 @@ Desenvolver um sistema simples de banco de dados relacional para gerenciar event
 48. Liste os eventos que **não têm** nenhuma palestra associada.
 49. Liste os nomes dos palestrantes que **não** participam de nenhuma palestra cujo nome contenha "inovação".
 50. Liste os participantes que se inscreveram em **todos os eventos que ocorreram em 2025**.
+
+
+Perfeito 👍
+Vou **refazer a lista de 51 a 100** mantendo só o que você pediu: **schemas, views, subselects, group by, joins, union, except, case, order by, filtros etc.**
+E vou **remover as consultas complexas, CTEs e funções de janela**.
+
+---
+
+## 📝 Lista de Exercícios SQL – Continuação (51–100)
+
+### 🔹 51–55. Schemas e Views
+
+51. Crie um **schema** chamado `relatorios` e dentro dele uma tabela `eventos_passados` contendo apenas os eventos já encerrados.
+52. Crie uma **view** que mostre os eventos futuros com suas respectivas palestras.
+53. Crie uma **view** que liste os participantes e o número de eventos em que estão inscritos.
+54. Crie uma **view** que mostre palestrantes e a soma total de palestras ministradas por cada um.
+55. Crie uma consulta que utilize uma view para exibir apenas os eventos que têm mais de 50 inscrições.
+
+---
+
+### 🔹 56–60. UNION, INTERSECT, EXCEPT
+
+56. Liste todos os nomes de pessoas que são **participantes** ou **palestrantes** (use `UNION`).
+57. Liste apenas os nomes de pessoas que aparecem **tanto** como palestrantes **quanto** como participantes (use `INTERSECT`).
+58. Liste os participantes que **não são palestrantes** (use `EXCEPT`).
+59. Liste os palestrantes que **não são participantes** (use `EXCEPT`).
+60. Mostre os nomes de todos os palestrantes e participantes em uma única lista, indicando a função (coluna “Tipo”).
+
+---
+
+### 🔹 61–65. Subselects
+
+61. Liste os eventos que possuem mais palestras do que a **média geral** de palestras por evento.
+62. Liste os palestrantes que ministram palestras apenas em eventos que ocorreram em 2025.
+63. Liste os participantes que estão em eventos que possuem **mais de 5 palestras**.
+64. Liste os eventos que têm exatamente o mesmo número de participantes que o evento de ID = 1.
+65. Liste os participantes que estão inscritos em **menos eventos do que a média** de inscrições por participante.
+
+---
+
+### 🔹 66–70. GROUP BY + HAVING
+
+66. Liste os locais (cidades) que já receberam mais de 3 eventos.
+67. Liste os anos em que ocorreram mais de 10 palestras.
+68. Liste os palestrantes que participaram de palestras em **mais de um evento diferente**.
+69. Liste os eventos que possuem **pelo menos 2 palestras com múltiplos palestrantes**.
+70. Liste os participantes que se inscreveram em **todos os eventos realizados em sua cidade**.
+
+---
+
+### 🔹 71–75. CASE WHEN e COALESCE
+
+71. Liste todos os participantes e mostre “VIP” se estiverem em mais de 5 eventos, senão “Regular”.
+72. Liste os eventos e mostre “Grande Evento” se tiver mais de 100 inscrições, “Médio” entre 50–100 e “Pequeno” se tiver menos de 50.
+73. Liste todas as palestras e, caso não tenham palestrante, mostre “A Definir” na coluna de palestrante.
+74. Liste os participantes e mostre o número de eventos inscritos, mas se for `NULL`, exiba `0` (use `COALESCE`).
+75. Liste os palestrantes e classifique-os como “Ativo” se já ministraram palestra neste ano, senão “Inativo”.
+
+---
+
+### 🔹 76–80. ORDER BY, LIMIT, OFFSET
+
+76. Mostre os 10 eventos com maior duração.
+77. Mostre os 5 participantes que mais se inscreveram em eventos.
+78. Liste as 3 palestras mais recentes.
+79. Liste os 10 eventos mais antigos já realizados.
+80. Liste os 20 primeiros participantes em ordem alfabética.
+
+---
+
+### 🔹 81–85. JOINs e Filtros Extras
+
+81. Liste todos os eventos e, ao lado, o número total de palestrantes que participaram das palestras daquele evento.
+82. Liste todos os participantes e, ao lado, a quantidade de eventos realizados em 2025 em que estão inscritos.
+83. Liste todos os eventos e mostre apenas os que têm palestras contendo a palavra “Machine”.
+84. Liste os palestrantes que estão associados a palestras em mais de uma cidade diferente.
+85. Liste todos os participantes e os eventos em que estão inscritos, mesmo que algum evento não tenha palestras associadas (`LEFT JOIN`).
+
+---
+
+### 🔹 86–90. IS NULL, NOT IN, EXISTS
+
+86. Liste os eventos sem palestras (usando `IS NULL`).
+87. Liste os participantes que não aparecem em nenhuma inscrição (usando `NOT IN`).
+88. Liste os palestrantes que não têm nenhuma palestra associada (usando `NOT IN`).
+89. Liste os eventos que possuem palestras associadas (usando `EXISTS`).
+90. Liste os participantes que estão inscritos apenas em eventos que possuem palestras.
+
+---
+
+### 🔹 91–95. Agregações Extras
+
+91. Mostre a quantidade de eventos realizados por cidade.
+92. Mostre a quantidade de palestras realizadas em cada ano.
+93. Mostre o palestrante que mais ministrou palestras.
+94. Mostre o evento com maior número de participantes distintos.
+95. Mostre a média de palestras por evento em cada cidade.
+
+---
+
+### 🔹 96–100. Diversos
+
+96. Liste os 5 eventos com maior número de palestrantes.
+97. Liste os 5 participantes que mais frequentaram eventos em 2024.
+98. Liste todas as palestras e mostre também o evento a que pertencem, ordenadas por nome de evento.
+99. Liste todos os participantes que nunca participaram de eventos em São Paulo.
+100. Liste os palestrantes que só ministraram palestras em eventos encerrados.
+
+---
