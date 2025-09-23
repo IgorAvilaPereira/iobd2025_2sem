@@ -52,6 +52,8 @@
 [regras_mapeamento](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/regras_mapeamento) <br>
 [slides_normalizacao](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./01_revisao_normalizacao_modelagem_logica/slides_normalizacao) <br>
 ## [./02_lista1](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./02_lista1) <br>
+[Trabalho 1](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/05_lista_bloco_31_35/trabalho1.md)
+
 [Lista 1](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/01_revisao_normalizacao_modelagem_logica/lista1.md)
 
 :movie_camera: [SQL: Join's, WITH, Subselect, Group By, STRING_AGG, Having, JDBC, AVG, COUNT, ORDER BY e VIEWS](https://www.youtube.com/watch?v=0y_q_dKNT-0)
