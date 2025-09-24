@@ -206,9 +206,7 @@ public class MainWeb {
             } else {
                 Map<String, Object> map = new HashMap<>();
                 map.put("mensagem", "nenhum palestrante");
-
                 ctx.render("templates/erro.html", map);
-
             }
         });
 
