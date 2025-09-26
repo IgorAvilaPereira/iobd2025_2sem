@@ -126,3 +126,6 @@
 <br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/07_atendimento_trabalho1) <br><br>
 &nbsp;
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./07_atendimento_trabalho1/sistema_eventos) <br>
+## [./08_revisao_atividade1](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./08_revisao_atividade1) <br>
+<br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/08_revisao_atividade1) <br><br>
+&nbsp;
