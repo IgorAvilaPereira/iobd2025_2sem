@@ -35,4 +35,28 @@ SELECT * FROM qtde_inscritos_por_evento where count >= 4;
 -- off-topic: left join view + tabela
 SELECT * FROM qtde_inscritos_por_evento LEFT JOIN palestra ON qtde_inscritos_por_evento.id = palestra.evento_id where count >=4;
 
+-- 56
+SELECT participante.id, participante.nome FROM participante
+UNION
+SELECT palestrante.id, palestrante.nome FROM palestrante;
+
+-- 57
+SELECT participante.nome FROM participante INTERSECT ALL SELECT nome from palestrante;
+
+-- 58 jump
+
+-- 59 jump
+
+-- 60 
+SELECT participante.id, participante.nome, 'Participante' as tipo FROM participante UNION ALL SELECT palestrante.id, palestrante.nome, 'Palestrante' as tipo FROM palestrante;
+
+-- 61 jump + eh interessante fazer
+
+-- 62
+SELECT DISTINCT palestrante.id, palestrante.nome FROM palestrante JOIN palestra_palestrante on palestrante.id = palestra_palestrante.palestrante_id join palestra on palestra.id = palestra_palestrante.palestra_id where palestra.evento_id in (select evento.id from evento where extract(year from data_inicio) = EXTRACT(year from CURRENT_DATE));
+
+-- 63
+SELECT * FROM participante join inscricao on participante.id = inscricao.participante_id where inscricao.evento_id in(SELECT evento.id FROM evento JOIN palestra on evento.id = palestra.evento_id GROUP BY evento.id having count(palestra.evento_id) >= 5);
+
+
 
