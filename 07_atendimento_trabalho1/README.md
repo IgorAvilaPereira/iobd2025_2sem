@@ -1,3 +1,5 @@
+[Javalin, SQL, Mustache, JDBC, Trabalho 1 (iobd2025_2sem)](https://youtu.be/3drLtu-fVnY)
+
 [Lista 1](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/01_revisao_normalizacao_modelagem_logica/lista1.md)
 
 [Trabalho 1](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/05_lista_bloco_31_35/trabalho1.md)
