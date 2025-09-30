@@ -129,6 +129,7 @@
 &nbsp;
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./07_atendimento_trabalho1/sistema_eventos) <br>
 ## [./08_revisao_atividade1](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./08_revisao_atividade1) <br>
+[lista1_continuacao.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./08_revisao_atividade1/lista1_continuacao.sql) <br>
 * Fazer exercícios adicionais (Lista 1)
 
 * Join's: inner, right/left, cross, full e etc.
