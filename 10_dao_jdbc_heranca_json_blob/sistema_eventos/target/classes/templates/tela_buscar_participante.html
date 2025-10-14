@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function busca() {
+            try {
+                const response = await fetch("/buscar_participante", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({"nome": document.getElementById("nome").value})
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                var vetParticipante = await response.json(); 
+                document.getElementById("resultado").innerHTML = "<ul>";
+                for (let index = 0; index < vetParticipante.length; index++) {
+                    var participante = vetParticipante[index];
+                    document.getElementById("resultado").innerHTML+= "<li>"+participante.nome+"</li>"; 
+                }
+                document.getElementById("resultado").innerHTML+= "</ul>";
+                return;
+            } catch (error) {
+                console.error('Error during fetch:', error);
+                throw error; // Re-throw the error for external handling
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- <form action="/buscar_participante" method="post"> -->
+        Buscar <input type="text" id="nome" oninput="busca()">
+    
+        <!-- <input type="submit" value="Buscar"> -->
+    <!-- </form> -->
+    <!-- <ul>
+        {{#vetParticipante}}
+        <li> {{nome}}</li>
+        {{/vetParticipante}}
+    </ul> -->
+    <div id = "resultado">
+        
+    </div>
+</body>
+
+</html>

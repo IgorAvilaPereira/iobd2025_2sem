@@ -1,0 +1,71 @@
+package persistencia;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import negocio.Evento;
+import negocio.Palestra;
+
+public class PalestraDAO {
+
+    public boolean adicionar(Connection conexao, Palestra palestra) throws SQLException {
+        String sql = "INSERT INTO palestra (titulo, duracao, evento_id) values (?, ?, ?) RETURNING id;";
+        PreparedStatement instrucao = conexao.prepareStatement(sql);
+        instrucao.setString(1, palestra.getTitulo());
+        instrucao.setInt(2, palestra.getDuracao());
+        instrucao.setInt(3, palestra.getEvento().getId());
+        ResultSet rs = instrucao.executeQuery();
+        if (rs.next()) {
+            palestra.setId(rs.getInt("id"));
+        }
+        instrucao.close();
+        conexao.close();
+        return palestra.getId() != 0;
+    }
+
+    public List<Palestra> listar(Connection conexao) throws SQLException {
+        List<Palestra> vetPalestra = new ArrayList<>();
+        String sql = "SELECT * FROM palestra ORDER BY id DESC;";
+        PreparedStatement instrucao = conexao.prepareStatement(sql);
+        ResultSet rs = instrucao.executeQuery();
+        while (rs.next()) {
+            Palestra palestra = new Palestra();
+            palestra.setId(rs.getInt("id"));
+            palestra.setTitulo(rs.getString("titulo"));
+            palestra.setDuracao(rs.getInt("duracao"));
+            vetPalestra.add(palestra);
+        }
+        instrucao.close();
+        conexao.close();
+        return vetPalestra;
+    }
+
+    public Palestra obterPorId(Connection conexao, int id) throws SQLException {
+        String sql = "SELECT palestra.id as id, titulo, duracao, nome, local, data_inicio, data_fim, evento.id as evento_id FROM palestra inner join evento on (evento.id = palestra.evento_id) where palestra.id = ?;";
+        PreparedStatement instrucao = conexao.prepareStatement(sql);
+        instrucao.setInt(1, id);
+        ResultSet rs = instrucao.executeQuery();
+        Palestra palestra = new Palestra();
+        while (rs.next()) {
+            palestra.setId(rs.getInt("id"));
+            palestra.setTitulo(rs.getString("titulo"));
+            palestra.setDuracao(rs.getInt("duracao"));
+            Evento evento = new Evento();
+            evento.setNome(rs.getString("nome"));
+            evento.setId(rs.getInt("evento_id"));
+            evento.setDataFim(rs.getDate("data_fim"));
+            evento.setDataInicio(rs.getDate("data_inicio"));
+            evento.setLocal(rs.getString("local"));
+            palestra.setEvento(evento);
+        }
+        instrucao.close();
+        conexao.close();
+        return palestra;
+    }
+
+}
