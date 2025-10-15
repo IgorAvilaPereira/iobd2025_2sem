@@ -1,10 +1,16 @@
 package negocio;
 
+import apresentacao.MainWeb;
+
 public class Palestra {
     private int id;
     private String titulo;
     private int duracao;
     private Evento evento;
+    private byte[] material;
+    private String materialTipo;
+
+    
     
     public int getId() {
         return id;
@@ -30,7 +36,25 @@ public class Palestra {
     public void setEvento(Evento evento) {
         this.evento = evento;
     }
+    public byte[] getMaterial() {
+        return material;
+    }
+    public void setMaterial(byte[] material) {
+        this.material = material;
+    }
+    public void setMaterialTipo(String materialTipo) {
+        this.materialTipo = materialTipo;
+    }
+    public String getMaterialTipo() {
+        return materialTipo;
+    }
 
+     public String materialEncode() {
+        if (material != null) return MainWeb.encodeImageToBase64(material);
+        return null;
+    }
+
+    
     
 
 }

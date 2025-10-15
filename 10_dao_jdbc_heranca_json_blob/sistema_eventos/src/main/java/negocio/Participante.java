@@ -1,8 +1,11 @@
 package negocio;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
+import apresentacao.MainWeb;
 
 public class Participante {
     private int id;
@@ -11,24 +14,33 @@ public class Participante {
     private String cpf;
     private LocalDate dataNascimento;
     private List<Evento> vetEvento;
+    private byte[] foto;
 
-    public Participante(){
+    public Participante() {
         this.vetEvento = new ArrayList<Evento>();
 
     }
-        
+
     public Participante(int id, String nome) {
         this();
         this.id = id;
         this.nome = nome;
     }
 
+    public Participante(int id, String nome, String cpf) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getNome() {
         return nome;
     }
@@ -69,8 +81,24 @@ public class Participante {
         this.vetEvento = vetEvento;
     }
 
-    
-    
+    public byte[] getFoto() {
+        return foto;
+    }
 
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
 
+    public String dataNascimentoFormatada() {
+        if (this.dataNascimento != null) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            return dataNascimento.format(formatter);
+        }
+        return null;
+    }
+
+    public String fotoEncode() {
+        if (foto != null) return MainWeb.encodeImageToBase64(foto);
+        return null;
+    }
 }

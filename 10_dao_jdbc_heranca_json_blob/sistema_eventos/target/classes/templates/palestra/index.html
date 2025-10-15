@@ -20,16 +20,20 @@
                 <!-- <td>Excluir</td> -->
                 <td>Alterar</td>
                 <td>Nome</td>
+                <td>Material</td>
             </tr>
         </thead>
         <tbody>
 
             {{#vetPalestra}}
             <tr>
-                <td> 
-                    <a href="/tela_alterar_palestra/{{id}}" class="btn btn-warning">Alterar</a> 
-                </td> 
+                <td>
+                    <a href="/tela_alterar_palestra/{{id}}" class="btn btn-warning">Alterar</a>
+                </td>
                 <td> {{titulo}}</td>
+                <td>
+                <a href="/baixar_material/{{id}}">baixar</a>
+                </td>
             </tr>
             {{/vetPalestra}}
         </tbody>

@@ -9,8 +9,9 @@
 
 </head>
 <body>
-    <form action="/adicionar" method="post">
+    <form action="/adicionar" method="post" enctype="multipart/form-data">
         Nome: <input type="text" name="nome">
+        Foto: <input type="file" name="foto">
         <input type="submit" value="Adicionar" class="btn-primary">
     </form>
 </body>

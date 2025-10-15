@@ -1,6 +1,7 @@
 package apresentacao;
 
 import io.javalin.Javalin;
+import io.javalin.config.SizeUnit;
 import io.javalin.http.staticfiles.Location;
 import io.javalin.rendering.template.JavalinMustache;
 import negocio.Evento;
@@ -15,6 +16,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +28,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author iapereira
  */
 public class MainWeb {
+
+    public static String encodeImageToBase64(byte[] imageBytes) {
+        return Base64.getEncoder().encodeToString(imageBytes);
+    }
 
     public static void main(String[] args) {
         String host = "localhost";
@@ -44,6 +50,10 @@ public class MainWeb {
         var app = Javalin.create(config -> {
             config.fileRenderer(new JavalinMustache());
             config.staticFiles.add("/static", Location.CLASSPATH);
+            config.jetty.multipartConfig.cacheDirectory("c:/temp"); //where to write files that exceed the in memory limit
+            config.jetty.multipartConfig.maxFileSize(100, SizeUnit.MB); //the maximum individual file size allowed
+            config.jetty.multipartConfig.maxInMemoryFileSize(10, SizeUnit.MB); //the maximum file size to handle in memory
+            config.jetty.multipartConfig.maxTotalRequestSize(1, SizeUnit.GB); //the maximum size of the entire multipart request
         }).start(7070);
 
         // com js
@@ -51,8 +61,8 @@ public class MainWeb {
 
             ObjectMapper objectMapper = new ObjectMapper();
             Map<String, String> map = objectMapper.readValue(ctx.body(), Map.class);
-
             String nome = map.get("nome");
+
             if (!nome.isEmpty() && !nome.isBlank()) {
                 String sql = "SELECT * FROM participante where nome ILIKE '" + nome + "%'";
                 Connection conexao = DriverManager.getConnection(url, username, password);
@@ -82,6 +92,10 @@ public class MainWeb {
             Palestra palestra = new Palestra();
             palestra.setTitulo(ctx.formParam("titulo"));
             palestra.setDuracao(Integer.parseInt(ctx.formParam("duracao")));
+            if (ctx.uploadedFile("material").size() != 0) {
+                palestra.setMaterial(ctx.uploadedFile("material").content().readAllBytes());
+                palestra.setMaterialTipo(ctx.uploadedFile("material").contentType());
+            }
             palestra.setEvento(new EventoDAO().obter(conexao, Integer.parseInt(ctx.formParam("evento_id"))));
             conexao = DriverManager.getConnection(url, username, password);
             new PalestraDAO().adicionar(conexao, palestra);
@@ -103,6 +117,18 @@ public class MainWeb {
             Map<String, Object> model = new HashMap<>();
             model.put("vetEvento", vetEvento);
             ctx.render("/templates/evento.html", model);
+        });
+
+        app.get("/baixar_material/{id}", ctx -> {
+            Connection conexao = DriverManager.getConnection(url, username, password);
+            Palestra palestra = new PalestraDAO().obterPorId(conexao, Integer.parseInt(ctx.pathParam("id")));
+            if (!palestra.getMaterialTipo().contains("zip")) {
+                ctx.html("<embed src=\"data:"+palestra.getMaterialTipo()+";base64,"+encodeImageToBase64(palestra.getMaterial())+"\">");
+            } else {
+                Map<String, Object> model = new HashMap<>();
+                 model.put("palestra", palestra);
+                ctx.render("/templates/palestra/baixar.html", model);
+            }
         });
 
         app.get("/palestras", ctx -> {
@@ -140,12 +166,12 @@ public class MainWeb {
                 qtde = rs.getInt("nro");
             }
 
-            String sql = "SELECT id, nome FROM participante ORDER BY id LIMIT 10 OFFSET " + (pagina * 10);
+            String sql = "SELECT id, nome, cpf FROM participante ORDER BY id desc LIMIT 10 OFFSET " + (pagina * 10);
             rs = conexao.prepareStatement(sql).executeQuery();
             Map<String, Object> model = new HashMap<>();
             List<Participante> vetParticipante = new ArrayList<>();
             while (rs.next()) {
-                vetParticipante.add(new Participante(rs.getInt("id"), rs.getString("nome")));
+                vetParticipante.add(new Participante(rs.getInt("id"), rs.getString("nome"), rs.getString("cpf")));
             }
             model.put("vetParticipante", vetParticipante);
             model.put("mensagem_boas_vindas", "E ai meu!, blzura?");
@@ -178,15 +204,36 @@ public class MainWeb {
             ctx.redirect("/");
         });
 
+         app.get("/visualizar/{id}", ctx -> {
+            Connection conexao = DriverManager.getConnection(url, username, password);
+            Map<String, Object> map = new HashMap<>();
+            Participante participante = new ParticipanteDAO().obterPorId(conexao, Integer.parseInt(ctx.pathParam("id")));
+            map.put("participante", participante);
+            ctx.render("templates/visualizar.html", map); 
+        });
+
         // adicionar: adicionando um novo participante e redirecionando novamente para o
         // index (listagem)
         app.post("/adicionar", ctx -> {
             Connection conexao = DriverManager.getConnection(url, username, password);
             String nome = ctx.formParam("nome");
-            String sql = "INSERT INTO participante (nome) values ('" + nome + "');";
-            conexao.prepareStatement(sql).execute();
-            conexao.close();
-            ctx.redirect("/");
+            Participante participante = new Participante();
+            participante.setNome(nome);
+            var foto = ctx.uploadedFile("foto");
+            System.out.println(foto.filename());
+            System.out.println(foto.contentType());
+            System.out.println(foto.size());
+            System.out.println(foto.content().toString());
+            participante.setFoto(foto.content().readAllBytes());
+            if (foto.size() == 0 || foto.contentType().equals("image/jpeg")) {
+                new ParticipanteDAO().adicionar(conexao, participante);
+                ctx.redirect("/");
+
+            } else {
+                Map<String, Object> map = new HashMap<>();
+                map.put("mensagem", "Imagem não é JPEG");
+                ctx.render("templates/erro.html", map);                
+            }
         });
 
         app.post("/alterar_palestra", ctx -> {

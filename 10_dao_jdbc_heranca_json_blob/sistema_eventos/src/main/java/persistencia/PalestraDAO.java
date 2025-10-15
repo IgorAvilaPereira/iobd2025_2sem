@@ -14,11 +14,13 @@ import negocio.Palestra;
 public class PalestraDAO {
 
     public boolean adicionar(Connection conexao, Palestra palestra) throws SQLException {
-        String sql = "INSERT INTO palestra (titulo, duracao, evento_id) values (?, ?, ?) RETURNING id;";
+        String sql = "INSERT INTO palestra (titulo, duracao, evento_id, material, material_tipo) values (?, ?, ?, ?, ?) RETURNING id;";
         PreparedStatement instrucao = conexao.prepareStatement(sql);
         instrucao.setString(1, palestra.getTitulo());
         instrucao.setInt(2, palestra.getDuracao());
         instrucao.setInt(3, palestra.getEvento().getId());
+        instrucao.setBytes(4, ((palestra.getMaterial().length == 0) ? null :  palestra.getMaterial()));
+        instrucao.setString(5, palestra.getMaterialTipo());
         ResultSet rs = instrucao.executeQuery();
         if (rs.next()) {
             palestra.setId(rs.getInt("id"));
@@ -38,6 +40,8 @@ public class PalestraDAO {
             palestra.setId(rs.getInt("id"));
             palestra.setTitulo(rs.getString("titulo"));
             palestra.setDuracao(rs.getInt("duracao"));
+            palestra.setMaterial(rs.getBytes("material"));
+            palestra.setMaterialTipo(rs.getString("material_tipo"));
             vetPalestra.add(palestra);
         }
         instrucao.close();
@@ -46,7 +50,7 @@ public class PalestraDAO {
     }
 
     public Palestra obterPorId(Connection conexao, int id) throws SQLException {
-        String sql = "SELECT palestra.id as id, titulo, duracao, nome, local, data_inicio, data_fim, evento.id as evento_id FROM palestra inner join evento on (evento.id = palestra.evento_id) where palestra.id = ?;";
+        String sql = "SELECT palestra.material_tipo as palestra_material_tipo, palestra.material as palestra_material, palestra.id as id, titulo, duracao, nome, local, data_inicio, data_fim, evento.id as evento_id FROM palestra inner join evento on (evento.id = palestra.evento_id) where palestra.id = ?;";
         PreparedStatement instrucao = conexao.prepareStatement(sql);
         instrucao.setInt(1, id);
         ResultSet rs = instrucao.executeQuery();
@@ -55,6 +59,8 @@ public class PalestraDAO {
             palestra.setId(rs.getInt("id"));
             palestra.setTitulo(rs.getString("titulo"));
             palestra.setDuracao(rs.getInt("duracao"));
+            palestra.setMaterial(((rs.getBytes("palestra_material") != null) ? rs.getBytes("palestra_material") : null));
+            palestra.setMaterialTipo(rs.getString("palestra_material_tipo"));
             Evento evento = new Evento();
             evento.setNome(rs.getString("nome"));
             evento.setId(rs.getInt("evento_id"));
