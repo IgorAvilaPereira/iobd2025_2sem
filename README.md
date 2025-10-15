@@ -387,4 +387,5 @@ SELECT lo_unlink(32784);
 
 &nbsp;
 [Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_dao_jdbc_heranca_json_blob)
+[resumao_bytea_oid.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/resumao_bytea_oid.md) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/sistema_eventos) <br>
