@@ -392,8 +392,9 @@ SELECT lo_unlink(32784);
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/sistema_eventos) <br>
 ## [./11_correcao_bugs_heranca_tabelas_postgresql](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./11_correcao_bugs_heranca_tabelas_postgresql) <br>
 [bugs.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs_heranca_tabelas_postgresql/bugs.md) <br>
-[exemplo.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs_heranca_tabelas_postgresql/exemplo.sql) <br>
-[exemplo-transformacao-er-relacional-heranca.dia](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs_heranca_tabelas_postgresql/exemplo-transformacao-er-relacional-heranca.dia) <br>
+## [./12_heranca_postgresql](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./12_heranca_postgresql) <br>
+[exemplo.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/exemplo.sql) <br>
+[exemplo-transformacao-er-relacional-heranca.dia](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/exemplo-transformacao-er-relacional-heranca.dia) <br>
 ### Herança de Tabelas PostgreSQL
 
 #### ✅ O que é herdado pelas tabelas filhas (`INHERITS`) no PostgreSQL?
