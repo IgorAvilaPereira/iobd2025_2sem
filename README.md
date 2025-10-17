@@ -175,12 +175,12 @@
 ## [./09_atividade1](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./09_atividade1) <br>
 <br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/09_atividade1) <br><br>
 &nbsp;
-## [./10_dao_jdbc_heranca_json_blob](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_dao_jdbc_heranca_json_blob) <br>
-[alter_table.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/alter_table.sql) <br>
-[bugs.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/bugs.md) <br>
-[dao_jdbc.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/dao_jdbc.pdf) <br>
-[estrategias_orm.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/estrategias_orm.pdf) <br>
-[jdbc.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/jdbc.pdf) <br>
+## [./10_bytea_oid](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_bytea_oid) <br>
+[alter_table.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_bytea_oid/alter_table.sql) <br>
+[bugs.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_bytea_oid/bugs.md) <br>
+[dao_jdbc.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_bytea_oid/dao_jdbc.pdf) <br>
+[estrategias_orm.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_bytea_oid/estrategias_orm.pdf) <br>
+[jdbc.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_bytea_oid/jdbc.pdf) <br>
 
 ### Blob's - Bytea e OID (Arquivos)
 
@@ -388,8 +388,8 @@ SELECT lo_unlink(32784);
 
 &nbsp;
 [Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_dao_jdbc_heranca_json_blob)
-[resumao_bytea_oid.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/resumao_bytea_oid.md) <br>
-[sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/sistema_eventos) <br>
+[resumao_bytea_oid.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_bytea_oid/resumao_bytea_oid.md) <br>
+[sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_bytea_oid/sistema_eventos) <br>
 ## [./11_correcao_bugs](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./11_correcao_bugs) <br>
 [bugs.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs/bugs.md) <br>
 ## [./12_heranca_postgresql](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./12_heranca_postgresql) <br>
