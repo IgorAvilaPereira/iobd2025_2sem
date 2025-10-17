@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Download ZIP</title>
+    </head>
+
+    <body>
+        <!-- <button id="downloadZip">Download Zipped File</button> -->
+        <a href="data:{{palestra.materialTipo}};base64,{{palestra.materialEncode}}">baixar</a>
+    </body>
+    <!-- 
+     <script>
+        // Assume base64ZipString is received from your Java backend
+        const base64ZipString = "{{palestra.materialEncode}}"; // Replace with actual Base64 string
+
+        document.getElementById('downloadZip').addEventListener('click', () => {
+            const fileName = "downloaded_file.zip";
+            const mimeType = "application/zip";
+
+            // Decode Base64 string to a Blob
+            const byteCharacters = atob(base64ZipString);
+            const byteNumbers = new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            const byteArray = new Uint8Array(byteNumbers);
+            const blob = new Blob([byteArray], { type: mimeType });
+
+            // Create a link element and trigger download
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = fileName;
+            document.body.appendChild(link); // Append to body to make it clickable in all browsers
+            link.click();
+            document.body.removeChild(link); // Clean up
+            URL.revokeObjectURL(url); // Release object URL
+        });
+    </script> -->
+
+    </html>
+</body>
+
+</html>
