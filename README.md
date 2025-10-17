@@ -277,12 +277,12 @@ Essa abordagem suporta 100% de:
 * Integridade forte e controle total ✅
 
 &nbsp;[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_correcao_bugs_heranca_tabelas_postgresql)
-## [./10_dao_jdbc_heranca_json_blob](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_dao_jdbc_heranca_json_blob) <br>
-[alter_table.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/alter_table.sql) <br>
-[bugs.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/bugs.md) <br>
-[dao_jdbc.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/dao_jdbc.pdf) <br>
-[estrategias_orm.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/estrategias_orm.pdf) <br>
-[jdbc.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/jdbc.pdf) <br>
+## [./11_dao_jdbc_heranca_json_blob](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./11_dao_jdbc_heranca_json_blob) <br>
+[alter_table.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_dao_jdbc_heranca_json_blob/alter_table.sql) <br>
+[bugs.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_dao_jdbc_heranca_json_blob/bugs.md) <br>
+[dao_jdbc.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_dao_jdbc_heranca_json_blob/dao_jdbc.pdf) <br>
+[estrategias_orm.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_dao_jdbc_heranca_json_blob/estrategias_orm.pdf) <br>
+[jdbc.pdf](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_dao_jdbc_heranca_json_blob/jdbc.pdf) <br>
 
 ### Blob's - Bytea e OID (Arquivos)
 
@@ -490,5 +490,5 @@ SELECT lo_unlink(32784);
 
 &nbsp;
 [Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_dao_jdbc_heranca_json_blob)
-[resumao_bytea_oid.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/resumao_bytea_oid.md) <br>
-[sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/sistema_eventos) <br>
+[resumao_bytea_oid.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_dao_jdbc_heranca_json_blob/resumao_bytea_oid.md) <br>
+[sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_dao_jdbc_heranca_json_blob/sistema_eventos) <br>
