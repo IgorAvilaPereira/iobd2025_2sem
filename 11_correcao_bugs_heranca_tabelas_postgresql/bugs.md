@@ -652,7 +652,7 @@ throws SQLException
 
 ---
 
-## 🧭 **6. SQL com *SELECT *** (PalestraDAO.listar)**
+## 🧭 **6. SQL com SELECT (PalestraDAO.listar)**
 
 **Trecho:**
 
@@ -1066,7 +1066,7 @@ comando.setBytes(2, ((participante.getFoto().length == 0) ? null :  participante
 
 ```
 NullPointerException
-```
+```Pa
 
 ✅ Melhor:
 
