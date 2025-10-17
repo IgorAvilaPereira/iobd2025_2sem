@@ -96,4 +96,4 @@ Essa abordagem suporta 100% de:
 * Índices ✅
 * Integridade forte e controle total ✅
 
-&nbsp;[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_correcao_bugs_heranca_tabelas_postgresql)
+&nbsp;[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./12_heranca_postgresql)
