@@ -384,10 +384,7 @@ SELECT lo_unlink(32784);
 
 <!-- https://github.com/IgorAvilaPereira/iobd2022_2sem/blob/main/PortalDeNoticiasBanners -->
 
-**2) Integrar com a aplicação Java/JDBC**
-
-&nbsp;
-[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_dao_jdbc_heranca_json_blob)
+[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_bytea_oid)
 [resumao_bytea_oid.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_bytea_oid/resumao_bytea_oid.md) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_bytea_oid/sistema_eventos) <br>
 ## [./11_correcao_bugs](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./11_correcao_bugs) <br>
@@ -493,4 +490,4 @@ Essa abordagem suporta 100% de:
 * Índices ✅
 * Integridade forte e controle total ✅
 
-&nbsp;[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_correcao_bugs_heranca_tabelas_postgresql)
+&nbsp;[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./12_heranca_postgresql)
