@@ -391,6 +391,7 @@ SELECT lo_unlink(32784);
 [resumao_bytea_oid.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/resumao_bytea_oid.md) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/sistema_eventos) <br>
 ## [./11_correcao_bugs_heranca_tabelas_postgresql](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./11_correcao_bugs_heranca_tabelas_postgresql) <br>
+[bugs.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs_heranca_tabelas_postgresql/bugs.md) <br>
 [exemplo.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs_heranca_tabelas_postgresql/exemplo.sql) <br>
 [exemplo-transformacao-er-relacional-heranca.dia](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs_heranca_tabelas_postgresql/exemplo-transformacao-er-relacional-heranca.dia) <br>
 ### Herança de Tabelas PostgreSQL
