@@ -37,7 +37,6 @@ Gerencia o sistema integralmente, incluindo criação de usuários, eventos e pe
 
 * Acesso total a todas as tabelas e sequências.
 * Criação, modificação e remoção de usuários.
-* Ignora restrições de RLS.
 
 <!--
 **Comandos DCL:**
