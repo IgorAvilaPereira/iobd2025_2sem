@@ -185,7 +185,7 @@ CREATE TABLE evento_privado (
 
 ---
 
-#### **3.2.2 Exemplos de Uso do Campo JSONB**
+#### **3.2.2 Exemplos de Uso do Campo JSONB - Tabela Pai Evento**
 
 ```sql
 -- Atualizar detalhes de um evento com programação e links
