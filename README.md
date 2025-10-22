@@ -393,7 +393,7 @@ SELECT lo_unlink(32784);
 ## [./11_correcao_bugs](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./11_correcao_bugs) <br>
 [bugs.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs/bugs.md) <br>
 [trabalho2.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs/trabalho2.md) <br>
-[sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs/sistema_eventos) <br>
+[corrigindo_bugs](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs/corrigindo_bugs) <br>
 ## [./12_heranca_postgresql](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./12_heranca_postgresql) <br>
 [exemplo.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/exemplo.sql) <br>
 [exemplo-transformacao-er-relacional-heranca.dia](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/exemplo-transformacao-er-relacional-heranca.dia) <br>
