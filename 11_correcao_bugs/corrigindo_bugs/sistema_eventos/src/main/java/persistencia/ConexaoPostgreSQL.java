@@ -14,13 +14,12 @@ public class ConexaoPostgreSQL {
     private String password;
 
     public ConexaoPostgreSQL() {
-       Properties prop = new MinhasPropriedades().getPropertyObject();
+        Properties prop = new MinhasPropriedades().getPropertyObject();
         this.dbname = prop.getProperty("dbname");
         this.username = prop.getProperty("username");
         this.password = prop.getProperty("password");
         this.port = prop.getProperty("port");
         this.host = prop.getProperty("host");
-       
     }
 
     public Connection getConnection() {
