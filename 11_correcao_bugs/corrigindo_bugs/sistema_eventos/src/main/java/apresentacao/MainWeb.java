@@ -38,21 +38,13 @@ public class MainWeb {
 
     public static void main(String[] args) {
         Properties prop = new MinhasPropriedades().getPropertyObject();
-
         var app = Javalin.create(config -> {
             config.fileRenderer(new JavalinMustache());
             config.staticFiles.add("/static", Location.CLASSPATH);
             config.jetty.multipartConfig.cacheDirectory("c:/temp");
-            config.jetty.multipartConfig.maxFileSize(Integer.parseInt(prop.getProperty("MAX_SIZE")), SizeUnit.MB); // the
-                                                                                                                   // maximum
-                                                                                        // individual
-                                                                                                                   // file
-                                                                                                                   // size
-                                                                                                                   // allowed
-            config.jetty.multipartConfig.maxInMemoryFileSize(10, SizeUnit.MB); // the maximum file size to handle in
-                                                                               // memory
-            config.jetty.multipartConfig.maxTotalRequestSize(1, SizeUnit.GB); // the maximum size of the entire
-                                                                              // multipart request
+            config.jetty.multipartConfig.maxFileSize(Integer.parseInt(prop.getProperty("MAX_SIZE")), SizeUnit.MB); 
+            config.jetty.multipartConfig.maxInMemoryFileSize(10, SizeUnit.MB);                                                                                // memory
+            config.jetty.multipartConfig.maxTotalRequestSize(1, SizeUnit.GB); 
         }).start(Integer.parseInt(prop.getProperty("javalin_port")));
 
         // com js
