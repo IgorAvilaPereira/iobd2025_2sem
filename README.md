@@ -387,9 +387,6 @@ SELECT lo_unlink(32784);
 [Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_bytea_oid)
 [resumao_bytea_oid.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_bytea_oid/resumao_bytea_oid.md) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_bytea_oid/sistema_eventos) <br>
-## [./10_dao_jdbc_heranca_json_blob](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./10_dao_jdbc_heranca_json_blob) <br>
-[*.*](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/*.*) <br>
-[sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./10_dao_jdbc_heranca_json_blob/sistema_eventos) <br>
 ## [./11_correcao_bugs](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./11_correcao_bugs) <br>
 [bugs.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs/bugs.md) <br>
 [trabalho2.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./11_correcao_bugs/trabalho2.md) <br>
