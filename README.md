@@ -494,4 +494,5 @@ Essa abordagem suporta 100% de:
 
 &nbsp;[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./12_heranca_postgresql)
 ## [./13_json_postgres](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./13_json_postgres) <br>
+[indices.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./13_json_postgres/indices.md) <br>
 [json.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./13_json_postgres/json.md) <br>
