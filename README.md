@@ -394,6 +394,8 @@ SELECT lo_unlink(32784);
 ## [./12_heranca_postgresql](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./12_heranca_postgresql) <br>
 [exemplo.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/exemplo.sql) <br>
 [exemplo-transformacao-er-relacional-heranca.dia](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/exemplo-transformacao-er-relacional-heranca.dia) <br>
+[indices.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/indices.md) <br>
+[json.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/json.md) <br>
 ### Herança de Tabelas PostgreSQL
 
 #### ✅ O que é herdado pelas tabelas filhas (`INHERITS`) no PostgreSQL?
@@ -495,6 +497,3 @@ Essa abordagem suporta 100% de:
 &nbsp;[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./12_heranca_postgresql)
 [sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/sistema_eventos.sql) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/sistema_eventos) <br>
-## [./13_json_postgres](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./13_json_postgres) <br>
-[indices.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./13_json_postgres/indices.md) <br>
-[json.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./13_json_postgres/json.md) <br>
