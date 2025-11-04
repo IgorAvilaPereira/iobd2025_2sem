@@ -238,6 +238,10 @@ WHERE id_evento = 1;
 ---
 -->
 
+## 3.1 Upload de Arquivos
+
+Upload de arquivo em algum lugar que ainda não exista!
+
 ## **4. Conclusão**
 
 A integração entre **herança de tabelas**, **colunas JSONB** e **políticas de acesso (DCL)** no PostgreSQL proporciona uma solução de **alto nível técnico e flexível** para o gerenciamento de eventos.
