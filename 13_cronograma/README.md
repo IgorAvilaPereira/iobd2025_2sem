@@ -1,3 +1,5 @@
+ALTER TABLE participante ADD CONSTRAINT email_unico UNIQUE (email);
+ALTER TABLE participante ADD CONSTRAINT cpf_unico UNIQUE (cpf);
 
 * 04/11 - Hoje - Aparar as arestas!
 
