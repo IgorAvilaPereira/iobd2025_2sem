@@ -15,15 +15,21 @@
 <body>
     <h2>Perfil Participante</h2>
     Id:{{participante.id}} <br>
-    Cpf:{{participante.cpf}}  <br>
+    Cpf:{{participante.cpf}} <br>
     Nome:{{participante.nome}} <br>
-    Email: {{participante.email}}  <br>
+    Email: {{participante.email}} <br>
     Data Nascimento: {{participante.dataNascimentoFormatada}}<br>
     Foto: {{#participante.fotoEncode}}
-    <img src="data:image/jpeg;base64,{{participante.fotoEncode}}">
+    <img height="100px" width="100px" src="data:image/jpeg;base64,{{participante.fotoEncode}}">
     {{/participante.fotoEncode}}
     {{^participante.fotoEncode}}
     Sem foto
-    {{/participante.fotoEncode}}    
+    {{/participante.fotoEncode}}
+    <ul>
+        {{#vetInscricao}}
+        <li>{{evento.nome}}</li>
+        {{/vetInscricao}}
+    </ul>
 </body>
+
 </html>

@@ -3,14 +3,35 @@ package persistencia;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import negocio.Evento;
+import negocio.Inscricao;
 import negocio.Participante;
 
 public class ParticipanteDAO {
+
+    public boolean alterar(Participante participante) {
+        try (Connection conexao = new ConexaoPostgreSQL().getConnection()) {
+            String sql = "UPDATE participante SET cpf = ?, email = ?, nome = ?, data_nascimento = ?, foto = ? where id = ?";
+            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+            preparedStatement.setString(1, participante.getCpf());
+            preparedStatement.setString(2, participante.getEmail());
+            preparedStatement.setString(3, participante.getNome());
+            preparedStatement.setDate(4, Date.valueOf(participante.getDataNascimento()));
+            preparedStatement.setBytes(5, participante.getFoto());
+            preparedStatement.setInt(6, participante.getId());
+            int linhas = preparedStatement.executeUpdate();
+            return linhas == 1;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
     public Participante obterPorCpf(String cpf) throws SQLException {
         try (Connection conexao = new ConexaoPostgreSQL().getConnection()) {
@@ -38,7 +59,7 @@ public class ParticipanteDAO {
 
     public Participante obter(int id) throws SQLException {
         try (Connection conexao = new ConexaoPostgreSQL().getConnection()) {
-            String sql = "SElect * FROM participante where id = ?;";
+            String sql = "SELECT * FROM participante where id = ?;";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
@@ -62,14 +83,19 @@ public class ParticipanteDAO {
 
     public boolean adicionar(Participante participante) throws SQLException {
         try (Connection conexao = new ConexaoPostgreSQL().getConnection()) {
-            String sql = "INSERT INTO participante (nome, foto) values (?, ?) RETURNING id;";
+            String sql = "INSERT INTO participante (cpf, email, nome, data_nascimento, foto) values (?, ?, ?, ?, ?) RETURNING id;";
             PreparedStatement comando = conexao.prepareStatement(sql);
-            comando.setString(1, participante.getNome());
-            comando.setBytes(2, ((participante.getFoto().length == 0) ? null : participante.getFoto()));
+            comando.setString(1, participante.getCpf());
+            comando.setString(2, participante.getEmail());
+            comando.setString(3, participante.getNome());
+            comando.setDate(4, Date.valueOf(participante.getDataNascimento()));
+            comando.setBytes(5, ((participante.getFoto().length == 0) ? null : participante.getFoto()));
             ResultSet rs = comando.executeQuery();
             if (rs.next()) {
                 participante.setId(rs.getInt("id"));
             }
+        } catch (Exception e) {
+            return false;
         }
         return participante.getId() != 0;
     }
@@ -148,5 +174,45 @@ public class ParticipanteDAO {
         preparedStatement.setString(1, nome);
         preparedStatement.setInt(2, id);
         preparedStatement.executeUpdate();
+    }
+
+    public void realizarInscricao(int participante_id, int evento_id) throws SQLException {
+        Connection conexao = new ConexaoPostgreSQL().getConnection();
+        String sql = "INSERT INTO inscricao (participante_id, evento_id) values (?,?)";
+        PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+        preparedStatement.setInt(1, participante_id);
+        preparedStatement.setInt(2, evento_id);
+        preparedStatement.executeUpdate();
+    }
+
+    public List<Inscricao> minhasInscricoes(int participante_id) throws SQLException {
+        Participante participante = obter(participante_id);
+        List<Inscricao> vetEvento = new ArrayList<>();
+        String sql = "SELECT *, inscricao.id as inscricao_idtop, valor::numeric(10,2) as valor_convertido FROM inscricao INNER JOIN evento on inscricao.evento_id = evento.id where inscricao.participante_id = ?;";
+        Connection connection = new ConexaoPostgreSQL().getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, participante_id);
+        ResultSet rs = preparedStatement.executeQuery();
+        while (rs.next()) {
+            Inscricao inscricao = new Inscricao();
+            inscricao.setId(rs.getInt("inscricao_idtop"));
+            inscricao.setDataHora(rs.getObject("data_hora", java.time.LocalDateTime.class));
+            inscricao.setPago(rs.getBoolean("pago"));
+            inscricao.setValor(rs.getDouble("valor_convertido"));
+
+            Evento evento = new Evento();
+            evento.setId(rs.getInt("id"));
+            evento.setNome(rs.getString("nome"));
+            evento.setDataInicio(rs.getDate("data_inicio"));
+            evento.setDataFim(rs.getDate("data_fim"));
+            // evento.setStatus(rs.getString("status"));
+            evento.setLocal(rs.getString("local"));
+
+            inscricao.setEvento(evento);
+            inscricao.setParticipante(participante);
+
+            vetEvento.add(inscricao);
+        }
+        return vetEvento;
     }
 }

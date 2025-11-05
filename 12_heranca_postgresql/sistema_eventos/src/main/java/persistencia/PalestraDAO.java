@@ -126,4 +126,21 @@ public class PalestraDAO {
         conexao.prepareStatement(sql).execute();
         conexao.close();
     }
+
+    public boolean excluir(int id) throws SQLException {
+        Connection conexao = new ConexaoPostgreSQL().getConnection();
+        conexao.setAutoCommit(false);
+        try (PreparedStatement ps1 = conexao.prepareStatement("DELETE FROM palestra_palestrante where palestra_id = ?");
+                PreparedStatement ps2 = conexao.prepareStatement("DELETE FROM palestra WHERE id = ?")) {
+            ps1.setInt(1, id);
+            ps1.executeUpdate();
+            ps2.setInt(1, id);
+            ps2.executeUpdate();
+            conexao.commit();
+            return true;
+        } catch (Exception e) {
+            conexao.rollback();
+        }
+        return false;
+    }
 }

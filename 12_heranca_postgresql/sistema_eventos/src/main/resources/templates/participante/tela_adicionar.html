@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,16 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
+
 <body>
     <form action="/adicionar" method="post" enctype="multipart/form-data">
-        Nome: <input type="text" name="nome">
-        Foto: <input type="file" name="foto">
+        Nome: <input type="text" name="nome"> <br>
+        Data de Nascimento: <input type="date" name="data_nascimento"> <br>
+        cpf: <input type="text" name="cpf" maxlength="11"> <br>
+        email: <input type="email" name="email"> <br>
+        Foto: <input type="file" name="foto"> <br>
         <input type="submit" value="Adicionar" class="btn-primary">
     </form>
 </body>
+
 </html>

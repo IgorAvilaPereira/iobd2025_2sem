@@ -105,11 +105,27 @@ public class Participante {
         return null;
     }
 
+    //   public String dataNascimentoFormatadaInput() {
+    //     if (this.dataNascimento != null) {
+    //         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyydd/MM/");
+    //         return dataNascimento.format(formatter);
+    //     }
+    //     return null;
+    // }
+
+
+
     public String fotoEncode() {
         if (foto != null)
             return MainWeb.encodeImageToBase64(foto);
         return null;
     }
 
-  
+    @Override
+    public String toString() {
+        return "Participante [id=" + id + ", nome=" + nome + ", email=" + email + ", cpf=" + cpf + ", dataNascimento="
+                + dataNascimento + "]";
+    }
+
+    
 }

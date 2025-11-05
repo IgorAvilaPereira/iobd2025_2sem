@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/realizar_inscricao" method="post">
+        Participante: {{participante.nome}}
+        Evento: 
+        <select name="evento_id">
+            {{#vetEvento}}
+            <option value="{{id}}">{{nome}}</option>
+            {{/vetEvento}}
+        </select>  
+        <input type="hidden" name="id" value="{{participante.id}}">
+        <input type="submit" value="Realizar Inscricao">
+    </form>
+    
+</body>
+</html>

@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
@@ -24,6 +25,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.stream.Gatherer.Integrator;
+
+import javax.print.DocFlavor.STRING;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -43,9 +47,9 @@ public class MainWeb {
             config.fileRenderer(new JavalinMustache());
             config.staticFiles.add("/static", Location.CLASSPATH);
             config.jetty.multipartConfig.cacheDirectory("c:/temp");
-            config.jetty.multipartConfig.maxFileSize(Integer.parseInt(prop.getProperty("MAX_SIZE")), SizeUnit.MB); 
-            config.jetty.multipartConfig.maxInMemoryFileSize(10, SizeUnit.MB);                                                                                // memory
-            config.jetty.multipartConfig.maxTotalRequestSize(1, SizeUnit.GB); 
+            config.jetty.multipartConfig.maxFileSize(Integer.parseInt(prop.getProperty("MAX_SIZE")), SizeUnit.MB);
+            config.jetty.multipartConfig.maxInMemoryFileSize(10, SizeUnit.MB); // memory
+            config.jetty.multipartConfig.maxTotalRequestSize(1, SizeUnit.GB);
         }).start(Integer.parseInt(prop.getProperty("javalin_port")));
 
         // com js
@@ -62,11 +66,11 @@ public class MainWeb {
         });
 
         app.get("/tela_buscar_participante", ctx -> {
-            ctx.render("/templates/tela_buscar_participante.html");
+            ctx.render("/templates/participante/tela_buscar_participante.html");
         });
 
         app.get("/tela_adicionar", ctx -> {
-            ctx.render("/templates/tela_adicionar.html");
+            ctx.render("/templates/participante/tela_adicionar.html");
         });
 
         app.post("/adicionar_palestra", ctx -> {
@@ -134,7 +138,7 @@ public class MainWeb {
             Participante participante = new ParticipanteDAO().obterPorCpf(ctx.pathParam("cpf"));
             Map<String, Object> map = new HashMap<>();
             map.put("participante", participante);
-            ctx.render("/templates/participante.html", map);
+            ctx.render("/templates/participante/participante.html", map);
         });
 
         app.get("/{pagina}", ctx -> {
@@ -164,6 +168,23 @@ public class MainWeb {
             ctx.render("/templates/index.html", model);
         });
 
+        app.get("/excluir_palestra/{id}", ctx -> {
+
+            Map<String, Object> map = new HashMap<>();
+            map.put("mensagem", "Problema na Exclusão do Palestra");
+            try {
+                boolean resultado = new PalestraDAO().excluir(Integer.parseInt(ctx.pathParam("id")));
+                if (resultado) {
+                    ctx.redirect("/palestras");
+                } else {
+                    ctx.render("templates/erro.html", map);
+                }
+            } catch (Exception e) {
+                ctx.render("templates/erro.html", map);
+            }
+
+        });
+
         app.get("/excluir_participante/{id}", ctx -> {
             Map<String, Object> map = new HashMap<>();
             map.put("mensagem", "Problema na Exclusão do Participante");
@@ -183,13 +204,21 @@ public class MainWeb {
             Map<String, Object> map = new HashMap<>();
             Participante participante = new ParticipanteDAO().obter(Integer.parseInt(ctx.pathParam("id")));
             map.put("participante", participante);
-            ctx.render("templates/visualizar.html", map);
+            map.put("vetInscricao", new ParticipanteDAO().minhasInscricoes(Integer.parseInt(ctx.pathParam("id"))));
+            ctx.render("templates/participante/visualizar.html", map);
         });
 
         app.post("/adicionar", ctx -> {
+            Map<String, Object> map = new HashMap<>();
             String nome = ctx.formParam("nome");
+            String cpf = ctx.formParam("cpf");
+            String email = ctx.formParam("email");
+            LocalDate dataNascimento = LocalDate.parse(ctx.formParam("data_nascimento"));
             Participante participante = new Participante();
             participante.setNome(nome);
+            participante.setCpf(cpf);
+            participante.setEmail(email);
+            participante.setDataNascimento(dataNascimento);
             var foto = ctx.uploadedFile("foto");
             // System.out.println(foto.filename());
             // System.out.println(foto.contentType());
@@ -198,10 +227,14 @@ public class MainWeb {
             participante.setFoto(foto.content().readAllBytes());
             // TODO: tamanho maximo
             if (foto.size() == 0 || foto.contentType().equals("image/jpeg")) {
-                new ParticipanteDAO().adicionar(participante);
-                ctx.redirect("/");
+                boolean resultado = new ParticipanteDAO().adicionar(participante);
+                if (resultado) {
+                    ctx.redirect("/");
+                } else {
+                    map.put("mensagem", "Email ou Cpf já existente!");
+                    ctx.render("templates/erro.html", map);
+                }
             } else {
-                Map<String, Object> map = new HashMap<>();
                 map.put("mensagem", "Imagem não é JPEG");
                 ctx.render("templates/erro.html", map);
             }
@@ -214,7 +247,7 @@ public class MainWeb {
             int duracao = Integer.parseInt(ctx.formParam("duracao"));
             String palavras_chave = ctx.formParam("palavras_chave");
             List<String> vetPalavraChave = Arrays.asList(palavras_chave.split(";"));
-            
+
             Palestra palestra = new Palestra();
             palestra.setId(id);
             palestra.setTitulo(titulo);
@@ -243,13 +276,58 @@ public class MainWeb {
         app.get("/tela_alterar/{id}", ctx -> {
             Map<String, Object> map = new HashMap<>();
             map.put("participante", new ParticipanteDAO().obter(Integer.parseInt(ctx.pathParam("id"))));
-            ctx.render("/templates/tela_alterar.html", map);
+            ctx.render("/templates/participante/tela_alterar.html", map);
+        });
+
+           app.get("/inscricao/{id}", ctx -> {
+            Map<String, Object> map = new HashMap<>();
+            map.put("participante", new ParticipanteDAO().obter(Integer.parseInt(ctx.pathParam("id"))));
+            map.put("vetEvento", new EventoDAO().listar());
+            ctx.render("/templates/participante/inscricao.html", map);
+        });
+
+        app.post("/realizar_inscricao", ctx -> {
+            int participante_id = Integer.parseInt(ctx.formParam("id"));
+            int evento_id = Integer.parseInt(ctx.formParam("evento_id"));
+            new ParticipanteDAO().realizarInscricao(participante_id, evento_id);
+            ctx.redirect("/");
         });
 
         app.post("/alterar", ctx -> {
-            String nome = ctx.formParam("nome");
             int id = Integer.parseInt(ctx.formParam("id"));
-            new ParticipanteDAO().alterar(id, nome);           
+            Participante participante = new ParticipanteDAO().obter(id);
+            String nome = ctx.formParam("nome");
+            String cpf = ctx.formParam("cpf");
+            String email = ctx.formParam("email");
+            LocalDate dataNascimento = LocalDate.parse(ctx.formParam("data_nascimento"));
+            participante.setNome(nome);
+            participante.setCpf(cpf);
+            participante.setEmail(email);
+            participante.setDataNascimento(dataNascimento);
+            if (ctx.formParam("remover") != null) {
+                int remover = Integer.parseInt(ctx.formParam("remover"));
+                if (remover == 1) {
+                    participante.setFoto(null);
+                } else {
+                    var foto = ctx.uploadedFile("foto");
+                    if (foto != null) {
+                        if (foto.contentType().equals("image/jpeg")) {
+                            System.out.println("veio foto!");
+                            participante.setFoto(foto.content().readAllBytes());
+                        }
+                    }
+                }
+            } else {
+                var foto = ctx.uploadedFile("foto");
+                if (foto != null) {
+                    if (foto.contentType().equals("image/jpeg")) {
+                        System.out.println("veio foto!");
+                        participante.setFoto(foto.content().readAllBytes());
+                    }
+                }
+            }
+            boolean resultado = new ParticipanteDAO().alterar(participante);
+            // System.out.println(resultado);
             ctx.redirect("/");
         });
 
