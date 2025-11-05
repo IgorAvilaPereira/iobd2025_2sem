@@ -499,6 +499,8 @@ Essa abordagem suporta 100% de:
 [sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/sistema_eventos.sql) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./12_heranca_postgresql/sistema_eventos) <br>
 ## [./13_cronograma](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./13_cronograma) <br>
+ALTER TABLE participante ADD CONSTRAINT email_unico UNIQUE (email);
+ALTER TABLE participante ADD CONSTRAINT cpf_unico UNIQUE (cpf);
 
 * 04/11 - Hoje - Aparar as arestas!
 
