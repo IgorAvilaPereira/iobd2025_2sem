@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/css/estilo.css"> -->
+    <!-- <script src="/js/script.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script>
+        async function busca() {
+            try {
+                const response = await fetch("/buscar_participante", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ "nome": document.getElementById("nome").value })
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                var vetParticipante = await response.json();
+                document.getElementById("resultado").innerHTML = "<ul>";
+                for (let index = 0; index < vetParticipante.length; index++) {
+                    var participante = vetParticipante[index];
+                    document.getElementById("resultado").innerHTML += "<li>" + participante.nome + "</li>";
+                }
+                document.getElementById("resultado").innerHTML += "</ul>";
+                return;
+            } catch (error) {
+                console.error('Error during fetch:', error);
+                throw error; // Re-throw the error for external handling
+            }
+        }
+    </script>
+</head>
+
+<body>
+    {{mensagem_boas_vindas}}
+    <h1>Participantes</h1>
+    Buscar <input type="text" id="nome" oninput="busca()">
+
+    <div id="resultado"> </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Excluir</td>
+                <td>Alterar</td>
+                <td>Nome</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            {{#vetParticipante}}
+            <tr>
+
+                <td> <a href="/excluir_participante/{{id}}" class="btn btn-danger">Excluir</a> </td>
+                <td> <a href="/tela_alterar/{{id}}" class="btn btn-warning">Alterar</a> </td>
+                <td> <a href="/visualizar/{{id}}">{{nome}}</a></td>
+                <td> <a href="/inscricao/{{id}}">Inscrever-se</a></td>
+            </tr>
+
+            {{/vetParticipante}}
+        </tbody>
+
+    </table>
+
+
+    {{#anterior}}
+    <a href="/{{anterior}}">anterior</a>
+    {{/anterior}}
+    {{#proximo}}
+    <a href="/{{proximo}}">Proximo</a>
+    {{/proximo}}
+
+    <br> <br>
+
+    <h1>Menu</h1>
+    <a href="/tela_adicionar" class="btn btn-primary">Novo Participante</a>
+
+    <a href="/eventos" class="btn btn-primary">Eventos</a>
+
+    <a href="/palestras" class="btn btn-danger">Palestras</a>
+
+    <a href="/palestra/nova" class="btn btn-danger">Palestra Nova</a>
+
+    <a href="/tela_buscar_participante" class="btn btn-primary">Buscar</a>
+
+
+
+
+
+</body>
+
+</html>
