@@ -520,3 +520,4 @@ ALTER TABLE participante ADD CONSTRAINT cpf_unico UNIQUE (cpf);
 
 <br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/13_cronograma) <br><br>
 &nbsp;
+[sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./13_cronograma/sistema_eventos.sql) <br>
