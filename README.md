@@ -522,3 +522,9 @@ ALTER TABLE participante ADD CONSTRAINT cpf_unico UNIQUE (cpf);
 &nbsp;
 [sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./13_cronograma/sistema_eventos.sql) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./13_cronograma/sistema_eventos) <br>
+## [./14_dcl](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./14_dcl) <br>
+[proposta_exercicio.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/proposta_exercicio.md) <br>
+* :fire: https://www.devmedia.com.br/gerenciando-usuarios-e-permissoes-no-postgresql/14301
+
+[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_1sem/tree/main/14_dcl)
+&nbsp;
