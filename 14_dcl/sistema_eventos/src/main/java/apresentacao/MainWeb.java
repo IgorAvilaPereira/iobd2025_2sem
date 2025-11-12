@@ -151,15 +151,18 @@ public class MainWeb {
 
         app.get("/baixar_material/{id}", ctx -> {
             if (isLogado(ctx)) {
-
                 Palestra palestra = new PalestraDAO().obter(Integer.parseInt(ctx.pathParam("id")));
-                if (!palestra.getMaterialTipo().contains("zip")) {
-                    ctx.html("<embed src=\"data:" + palestra.getMaterialTipo() + ";base64,"
+                if (palestra.getMaterialTipo() != null) {
+                    if (!palestra.getMaterialTipo().contains("zip")) {
+                        ctx.html("<embed src=\"data:" + palestra.getMaterialTipo() + ";base64,"
                             + encodeImageToBase64(palestra.getMaterial()) + "\">");
+                    } else {
+                        Map<String, Object> model = new HashMap<>();
+                        model.put("palestra", palestra);
+                        ctx.render("/templates/palestra/baixar.html", model);
+                    }
                 } else {
-                    Map<String, Object> model = new HashMap<>();
-                    model.put("palestra", palestra);
-                    ctx.render("/templates/palestra/baixar.html", model);
+                    ctx.html("Sem material");
                 }
             } else {
                 ctx.render("templates/tela_login.html");
