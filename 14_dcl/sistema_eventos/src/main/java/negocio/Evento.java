@@ -2,7 +2,6 @@ package negocio;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 
 public class Evento {
     private int id;

@@ -23,10 +23,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import java.util.Random;
-
-import org.jetbrains.annotations.NotNull;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -347,7 +343,6 @@ public class MainWeb {
 
         app.post("/alterar_palestra", ctx -> {
             if (isLogado(ctx)) {
-
                 // TODO: estamos mexendo soh nos palestrantes...
                 int id = Integer.parseInt(ctx.formParam("palestra_id"));
                 String titulo = ctx.formParam("titulo");
@@ -377,7 +372,6 @@ public class MainWeb {
 
         app.get("/tela_alterar_palestra/{id}", ctx -> {
             if (isLogado(ctx)) {
-
                 Map<String, Object> map = new HashMap<>();
                 Palestra palestra = new PalestraDAO().obter(Integer.parseInt(ctx.pathParam("id")));
                 map.put("palestra", palestra);
@@ -396,7 +390,6 @@ public class MainWeb {
 
         app.get("/tela_alterar/{id}", ctx -> {
             if (isLogado(ctx)) {
-
                 Map<String, Object> map = new HashMap<>();
                 map.put("participante", new ParticipanteDAO().obter(Integer.parseInt(ctx.pathParam("id"))));
                 ctx.render("/templates/participante/tela_alterar.html", map);
@@ -466,7 +459,7 @@ public class MainWeb {
                     }
                 }
             }
-            boolean resultado = new ParticipanteDAO().alterar(participante);
+            new ParticipanteDAO().alterar(participante);
             ctx.redirect("/");
         });
 

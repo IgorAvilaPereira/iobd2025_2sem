@@ -2,9 +2,6 @@ package negocio;
 
 import java.util.List;
 
-
-import apresentacao.MainWeb;
-
 public class Palestrante {
     private int id;
     private String nome;
