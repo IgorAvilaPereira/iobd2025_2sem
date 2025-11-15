@@ -525,7 +525,6 @@ ALTER TABLE participante ADD CONSTRAINT cpf_unico UNIQUE (cpf);
 ## [./14_dcl](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./14_dcl) <br>
 [aula.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/aula.sql) <br>
 [exemplo.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/exemplo.sql) <br>
-[proposta_exercicio.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/proposta_exercicio.md) <br>
 * :fire: https://www.devmedia.com.br/gerenciando-usuarios-e-permissoes-no-postgresql/14301
 
 [Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_1sem/tree/main/14_dcl)
@@ -534,3 +533,5 @@ ALTER TABLE participante ADD CONSTRAINT cpf_unico UNIQUE (cpf);
 [dcl](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/dcl) <br>
 [imagens](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/imagens) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/sistema_eventos) <br>
+## [./15_dcl_exercicios](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./15_dcl_exercicios) <br>
+[proposta_exercicio.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./15_dcl_exercicios/proposta_exercicio.md) <br>
