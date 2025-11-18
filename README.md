@@ -530,8 +530,10 @@ ALTER TABLE participante ADD CONSTRAINT cpf_unico UNIQUE (cpf);
 [Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_1sem/tree/main/14_dcl)
 &nbsp;
 [sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/sistema_eventos.sql) <br>
+[trabalho2_dicas.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/trabalho2_dicas.md) <br>
 [dcl](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/dcl) <br>
 [imagens](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/imagens) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./14_dcl/sistema_eventos) <br>
 ## [./15_dcl_exercicios](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./15_dcl_exercicios) <br>
 [proposta_exercicio.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./15_dcl_exercicios/proposta_exercicio.md) <br>
+[trabalho2_dicas.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./15_dcl_exercicios/trabalho2_dicas.md) <br>
