@@ -18,7 +18,7 @@ GRUPOS DE PERMISSÃO BD:
 
 * GRUPO ORGANIZADOR
 
-* GRUPO PARTICIPANTE
+* GRUPO PARTICIPANTE/PALESTRANTE
 
 * GRUPO SOMENTE_LEITURA
 
@@ -38,5 +38,5 @@ OBS:
 
 Upload de arquivo em algum lugar que ainda não exista!
 
-ex: banner de eventos
+
 

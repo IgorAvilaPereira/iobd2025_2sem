@@ -6,9 +6,10 @@
     <title>Document</title>
 </head>
 <body>
+    {{mensagem}}
     <form action="/login" method="post">
-        email: <input type="email" name="email"> <br>
-        senha: <input type="password" name="senha"> <br>
+        email: <input type="email" name="email" required="required"> <br>
+        senha: <input type="password" name="senha" required="required"> <br>
         <input type="radio" name="tipo" value="participante"> Participante <br>
         <input type="radio" name="tipo" value="palestrante"> Palestrante <br>
         <input type="submit" value="Realizar Login">

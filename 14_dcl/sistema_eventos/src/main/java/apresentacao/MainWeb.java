@@ -155,7 +155,7 @@ public class MainWeb {
                 if (palestra.getMaterialTipo() != null) {
                     if (!palestra.getMaterialTipo().contains("zip")) {
                         ctx.html("<embed src=\"data:" + palestra.getMaterialTipo() + ";base64,"
-                            + encodeImageToBase64(palestra.getMaterial()) + "\">");
+                                + encodeImageToBase64(palestra.getMaterial()) + "\">");
                     } else {
                         Map<String, Object> model = new HashMap<>();
                         model.put("palestra", palestra);
@@ -325,22 +325,29 @@ public class MainWeb {
         });
 
         app.post("/login", ctx -> {
-            String email = ctx.formParam("email");
-            String senha = ctx.formParam("senha");
-            boolean resultado = false;
-            String tipo = ctx.formParam("tipo");
-            if (tipo.equals("participante")) {
-                resultado = new ParticipanteDAO().realizarLogin(email, senha);
+            Map<String, Object> map = new HashMap<>();
+            if (!ctx.formParam("email").isBlank() && !ctx.formParam("senha").isBlank()) {
+                String email = ctx.formParam("email").trim();
+                String senha = ctx.formParam("senha").trim();
+                boolean resultado = false;
+                String tipo = ctx.formParam("tipo");
+                if (tipo.equals("participante")) {
+                    resultado = new ParticipanteDAO().realizarLogin(email, senha);
+                } else {
+                    resultado = new PalestranteDAO().realizarLogin(email, senha);
+                }
+                if (resultado == true) {
+                    // HttpSession session = ctx.req().getSession(false); // Get existing session,
+                    ctx.sessionAttribute("email", email);
+                    ctx.sessionAttribute("tipo", tipo);
+                    ctx.redirect("/0");
+                } else {
+                    map.put("mensagem", "Deu Xabum no teu login! Verifica teu email e tua senha, bro!");
+                    ctx.render("templates/tela_login.html", map);
+                }
             } else {
-                resultado = new PalestranteDAO().realizarLogin(email, senha);
-            }
-            if (resultado) {
-                // HttpSession session = ctx.req().getSession(false); // Get existing session, don't create new
-                ctx.sessionAttribute("email", email);
-                ctx.sessionAttribute("tipo", tipo);
-                ctx.redirect("/0");
-            } else {
-                ctx.render("templates/tela_login.html");
+                map.put("mensagem", "senha e email são obrigatórios!");
+                ctx.render("templates/tela_login.html", map);
             }
         });
 
