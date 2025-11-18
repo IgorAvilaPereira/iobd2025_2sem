@@ -23,6 +23,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Random;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -337,7 +339,6 @@ public class MainWeb {
                     resultado = new PalestranteDAO().realizarLogin(email, senha);
                 }
                 if (resultado == true) {
-                    // HttpSession session = ctx.req().getSession(false); // Get existing session,
                     ctx.sessionAttribute("email", email);
                     ctx.sessionAttribute("tipo", tipo);
                     ctx.redirect("/0");
@@ -392,12 +393,6 @@ public class MainWeb {
             }
         });
 
-        app.get("/logout", ctx -> {
-            HttpSession session = ctx.req().getSession();
-            session.removeAttribute("email");
-            ctx.redirect("/");
-        });
-
         app.get("/tela_alterar/{id}", ctx -> {
             if (isLogado(ctx)) {
                 Map<String, Object> map = new HashMap<>();
@@ -426,7 +421,6 @@ public class MainWeb {
 
         app.post("/realizar_inscricao", ctx -> {
             if (isLogado(ctx)) {
-
                 int participante_id = Integer.parseInt(ctx.formParam("id"));
                 int evento_id = Integer.parseInt(ctx.formParam("evento_id"));
                 new ParticipanteDAO().realizarInscricao(participante_id, evento_id);
@@ -476,21 +470,12 @@ public class MainWeb {
     }
 
     private static boolean isLogado(Context ctx) {
-        // HttpSession session = ctx.req().getSession();
-        if (ctx.sessionAttribute("email") != null)
+        HttpSession session = ctx.req().getSession();
+        // System.out.println(ctx.path()+"oi"+new Random().nextDouble()+":"+session.getAttribute("email"));
+        if (session.getAttribute("email") != null && !ctx.path().equals("/logout"))
             return true;
+        // logout
+        session.invalidate();
         return false;
     }
-
-    // private static boolean urlPrivadas(String url) {
-    // String rotasPrivadas[] = {"/alterar", "/realizar_inscricao", "/inscricao/"};
-    // for (String string : rotasPrivadas) {
-    // if (url.contains(string)){
-    // System.out.println("true");
-    // return true;
-    // }
-    // }
-    // System.out.println("false");
-    // return false;
-    // }
 }
