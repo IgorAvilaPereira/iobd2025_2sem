@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{mensagem}}
+    <form action="/login" method="post">
+        email: <input type="email" name="email" required="required"> <br>
+        senha: <input type="password" name="senha" required="required"> <br>
+        <input type="radio" name="tipo" value="participante"> Participante <br>
+        <input type="radio" name="tipo" value="palestrante"> Palestrante <br>
+        <input type="submit" value="Realizar Login">
+    </form>
+    <a href="/tela_cadastro">Conta nova</a>
+</body>
+</html>

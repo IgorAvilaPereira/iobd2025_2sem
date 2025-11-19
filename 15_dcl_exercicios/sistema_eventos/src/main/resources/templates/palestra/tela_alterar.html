@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Participante</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <form action="/alterar_palestra" method="post">
+        <input type="hidden" name="palestra_id" value="{{palestra.id}}">
+        Titulo: <input type="text" name="titulo" value="{{palestra.titulo}}"> <br>
+        Duração: <input type="number" name="duracao" value="{{palestra.duracao}}"> <br>
+        Palavras-Chave: <input type="text" name="palavras_chave" value="{{palestra.vetPalavraChaveFormatada}}"> <br>
+        <!-- Transformar Evento em um select -->
+        Evento: {{palestra.evento.nome}} <br>
+        {{#vetPalestrante}}
+            {{#ehPalestrante}}
+                <input type="checkbox" name="palestrantes" value="{{id}}" checked> {{nome}} <br>
+            {{/ehPalestrante}}
+            {{^ehPalestrante}}
+                <input type="checkbox" name="palestrantes" value="{{id}}"> {{nome}} <br>
+            {{/ehPalestrante}}
+        {{/vetPalestrante}}
+        <input type="submit" value="Alterar" class="btn-primary">
+    </form>
+</body>
+
+</html>

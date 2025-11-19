@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/alterar" method="post"  enctype="multipart/form-data">
+        Nome: <input type="text" name="nome" value="{{participante.nome}}">
+        <input type="hidden" name="id" value="{{participante.id}}">
+        Data de Nascimento: <input type="date" name="data_nascimento" value="{{participante.dataNascimento}}">
+        <br>
+        cpf: <input type="text" name="cpf" maxlength="11" value="{{participante.cpf}}"> <br>
+        email: <input type="email" name="email" value="{{participante.email}}"> <br>
+        {{#participante.fotoEncode}}
+        <img src="data:image/jpeg;base64,{{participante.fotoEncode}}">
+        Foto Nova: <input type="file" name="foto"> <br>
+        Remover foto? <input type="checkbox" name="remover" value="1"> <br>
+        {{/participante.fotoEncode}}
+        {{^participante.fotoEncode}}
+        Foto: <input type="file" name="foto"> <br>
+        {{/participante.fotoEncode}}
+
+
+
+        <input type="submit" value="Alterar">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/css/estilo.css"> -->
+    <!-- <script src="/js/script.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h2>Perfil Participante</h2>
+    Id:{{participante.id}} <br>
+    Cpf:{{participante.cpf}} <br>
+    Nome:{{participante.nome}} <br>
+    Email: {{participante.email}} <br>
+    Data Nascimento: {{participante.dataNascimentoFormatada}}<br>
+    Foto: {{#participante.fotoEncode}}
+    <img height="100px" width="100px" src="data:image/jpeg;base64,{{participante.fotoEncode}}">
+    {{/participante.fotoEncode}}
+    {{^participante.fotoEncode}}
+    Sem foto
+    {{/participante.fotoEncode}}
+    <ul>
+        {{#vetInscricao}}
+        <li>{{evento.nome}}</li>
+        {{/vetInscricao}}
+    </ul>
+</body>
+
+</html>
