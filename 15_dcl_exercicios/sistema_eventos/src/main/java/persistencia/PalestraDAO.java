@@ -25,7 +25,7 @@ public class PalestraDAO {
         instrucao.setString(1, palestra.getTitulo());
         instrucao.setInt(2, palestra.getDuracao());
         instrucao.setInt(3, palestra.getEvento().getId());
-        instrucao.setBytes(4, ((palestra.getMaterial().length == 0) ? null : palestra.getMaterial()));
+        instrucao.setBytes(4, ((palestra.getMaterial() == null) ? null : palestra.getMaterial()));
         instrucao.setString(5, palestra.getMaterialTipo());
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = mapper.writeValueAsString(palestra.getVetPalavraChave());
@@ -121,7 +121,6 @@ public class PalestraDAO {
                     + " where id = " + palestra.getId() + ";";
         }
         sql += "commit;";
-        System.out.println(sql);
         conexao.prepareStatement(sql).execute();
         conexao.close();
     }

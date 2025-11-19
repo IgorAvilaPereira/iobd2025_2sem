@@ -15,7 +15,7 @@
         <input type="hidden" name="palestra_id" value="{{palestra.id}}">
         Titulo: <input type="text" name="titulo" value="{{palestra.titulo}}" required="required"> <br>
         Duração: <input type="number" name="duracao" value="{{palestra.duracao}}" required="required"> <br>
-        Palavras-Chave: <input type="text" name="palavras_chave" value="{{palestra.vetPalavraChaveFormatada}}"> <br>
+        Palavras-Chave: <input type="text" name="palavras_chave" value="{{palestra.vetPalavraChaveFormatada}}" required="required"> <br>
         <!-- Transformar Evento em um select -->
         Evento: {{palestra.evento.nome}} <br>
         {{#vetPalestrante}}
