@@ -537,4 +537,5 @@ ALTER TABLE participante ADD CONSTRAINT cpf_unico UNIQUE (cpf);
 ## [./15_dcl_exercicios](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./15_dcl_exercicios) <br>
 [exercicios.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./15_dcl_exercicios/exercicios.sql) <br>
 [proposta_exercicio.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./15_dcl_exercicios/proposta_exercicio.md) <br>
+[sistema_eventos.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./15_dcl_exercicios/sistema_eventos.sql) <br>
 [trabalho2_dicas.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./15_dcl_exercicios/trabalho2_dicas.md) <br>
