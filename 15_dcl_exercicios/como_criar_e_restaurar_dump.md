@@ -1,9 +1,3 @@
-Para **criar** e **restaurar** um dump no **PostgreSQL via terminal**, você pode usar os utilitários `pg_dump`, `pg_dumpall` e `psql`/`pg_restore`, dependendo do tipo de backup.
-
-Abaixo segue um guia simples e direto.
-
----
-
 # ✅ **Criar um dump**
 
 ### **1. Dump de um banco específico (formato SQL)**
