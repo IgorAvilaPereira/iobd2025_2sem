@@ -542,7 +542,9 @@ ALTER TABLE participante ADD CONSTRAINT cpf_unico UNIQUE (cpf);
 [trabalho2_dicas.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./15_dcl_exercicios/trabalho2_dicas.md) <br>
 [sistema_eventos](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./15_dcl_exercicios/sistema_eventos) <br>
 ## [./16_atendimento_trabalho2_revisao_pre_atividade2](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./16_atendimento_trabalho2_revisao_pre_atividade2) <br>
+[cronograma.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./16_atendimento_trabalho2_revisao_pre_atividade2/cronograma.md) <br>
 [lista2.md](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./16_atendimento_trabalho2_revisao_pre_atividade2/lista2.md) <br>
+[lista2.sql](https://github.com/IgorAvilaPereira/iobd2025_2sem/blob/main/./16_atendimento_trabalho2_revisao_pre_atividade2/lista2.sql) <br>
 O que pode cair na Atividade Avaliada 2:
 
 * Modelo Relacional
