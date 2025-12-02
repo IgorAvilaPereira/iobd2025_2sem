@@ -577,3 +577,6 @@ O que pode cair na Atividade Avaliada 2:
 
 <br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/16_atendimento_trabalho2_revisao_pre_atividade2) <br><br>
 &nbsp;
+## [./17_apresentacao_trabalho2](https://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/./17_apresentacao_trabalho2) <br>
+<br><br>[Baixar todo o material da aula](https://download-directory.github.io/?url=http://github.com/IgorAvilaPereira/iobd2025_2sem/tree/main/17_apresentacao_trabalho2) <br><br>
+&nbsp;
